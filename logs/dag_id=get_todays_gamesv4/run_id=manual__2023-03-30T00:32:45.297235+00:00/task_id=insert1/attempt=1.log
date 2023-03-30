@@ -1,0 +1,35 @@
+[2023-03-30T00:32:51.901+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv4.insert1 manual__2023-03-30T00:32:45.297235+00:00 [queued]>
+[2023-03-30T00:32:51.918+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv4.insert1 manual__2023-03-30T00:32:45.297235+00:00 [queued]>
+[2023-03-30T00:32:51.919+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-30T00:32:51.919+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-03-30T00:32:51.920+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-30T00:32:51.941+0000] {taskinstance.py:1303} INFO - Executing <Task(PostgresOperator): insert1> on 2023-03-30 00:32:45.297235+00:00
+[2023-03-30T00:32:51.948+0000] {standard_task_runner.py:55} INFO - Started process 749 to run task
+[2023-03-30T00:32:51.956+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv4', 'insert1', 'manual__2023-03-30T00:32:45.297235+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/todays_games.py', '--cfg-path', '/tmp/tmpfv6gnhrg']
+[2023-03-30T00:32:51.957+0000] {standard_task_runner.py:83} INFO - Job 29: Subtask insert1
+[2023-03-30T00:32:52.048+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv4.insert1 manual__2023-03-30T00:32:45.297235+00:00 [running]> on host 853f67d509ed
+[2023-03-30T00:32:52.153+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv4
+AIRFLOW_CTX_TASK_ID=insert1
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-30T00:32:45.297235+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-30T00:32:45.297235+00:00
+[2023-03-30T00:32:52.156+0000] {sql.py:254} INFO - Executing: 
+        insert into test_table
+        values ('AB', 9, 3.2);
+        
+    
+[2023-03-30T00:32:52.174+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-03-30T00:32:52.503+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-03-30T00:32:52.508+0000] {sql.py:375} INFO - Running statement: 
+        insert into test_table
+        values ('AB', 9, 3.2);
+        
+    , parameters: None
+[2023-03-30T00:32:52.510+0000] {sql.py:384} INFO - Rows affected: 1
+[2023-03-30T00:32:52.529+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv4, task_id=insert1, execution_date=20230330T003245, start_date=20230330T003251, end_date=20230330T003252
+[2023-03-30T00:32:52.575+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-03-30T00:32:52.616+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check

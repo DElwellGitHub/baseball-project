@@ -6,10 +6,13 @@ import pathlib
 import airflow
 import requests
 import requests.exceptions as requests_exceptions
+import csv
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
+from airflow.providers.amazon.aws.transfers.sql_to_s3 import SqlToS3Operator
+from airflow.providers.postgres.hooks.postgres import PostgresHook
 
 dag = DAG(
     dag_id = "get_todays_gamesv4",
@@ -35,6 +38,21 @@ def write_games(ti):
     games_data = ti.xcom_pull(key='games')
     for k,v in games_data.items():
         print(v)
+
+def postgres_to_s3(ds):
+    #https://www.youtube.com/watch?v=rcG4WNwi900
+    #first query data from psql and save in text file
+    hook = PostgresHook(postgres_conn_id="postgres_localhost")
+    conn = hook.get_conn()
+    cursor = conn.cursor()
+    cursor.execute('select * from test_table;')
+    with open('dags/test_data.txt','w') as f:
+        csv_writer = csv.writer(f)
+        csv_writer.writerow([i[0] for i in cursor.description])
+        csv_writer.writerows(cursor)
+    cursor.close()
+    logging.info(f'Ran this on {ds}. Saved postgres data in text file: test_data.txt')
+    #step 2: upload text file into s3
 
 print_start = BashOperator(
     task_id="print_start",
@@ -95,6 +113,12 @@ test_postgres4 = PostgresOperator(
     '''
 )
 
+sql_to_s3 = PythonOperator(
+    dag=dag,
+    task_id="postgres_to_s3_task",
+    python_callable=postgres_to_s3
+)
+
 print_end = BashOperator(
     task_id="print_end",
     bash_command="echo end!",
@@ -103,4 +127,4 @@ print_end = BashOperator(
 )
 
 print_start >> call_games >> write_games_s3  >> print_end
-print_start >> test_postgres1 >> test_postgres2 >> test_postgres3 >> test_postgres4 >> print_end
+print_start >> test_postgres1 >> test_postgres2 >> test_postgres3 >> test_postgres4 >> sql_to_s3 >> print_end

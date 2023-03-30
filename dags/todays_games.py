@@ -13,6 +13,8 @@ from airflow.operators.python import PythonOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.providers.amazon.aws.transfers.sql_to_s3 import SqlToS3Operator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
+from airflow.providers.amazon.aws.hooks.s3 import S3Hook
+from tempfile import NamedTemporaryFile
 
 dag = DAG(
     dag_id = "get_todays_gamesv4",
@@ -46,13 +48,25 @@ def postgres_to_s3(ds):
     conn = hook.get_conn()
     cursor = conn.cursor()
     cursor.execute('select * from test_table;')
-    with open('dags/test_data.txt','w') as f:
+    with NamedTemporaryFile(mode='w') as f: #puts file in temp folder
+
+    #with open('dags/test_data.txt','w') as f:
         csv_writer = csv.writer(f)
         csv_writer.writerow([i[0] for i in cursor.description])
         csv_writer.writerows(cursor)
-    cursor.close()
-    logging.info(f'Ran this on {ds}. Saved postgres data in text file: test_data.txt')
+        f.flush()
+        cursor.close()
+        conn.close()
+        logging.info(f'Ran this on {ds}. Saved postgres data in text file: test_data.txt')
     #step 2: upload text file into s3
+        s3_hook = S3Hook(aws_conn_id='aws_hook')
+        s3_hook.load_file(
+            filename=f.name,
+            key=f'games/test_data.txt',
+            bucket_name='mlb-project',
+            replace=True
+        )
+        logging.info(f'Test data file {f.name} has been pushed to S3')
 
 print_start = BashOperator(
     task_id="print_start",

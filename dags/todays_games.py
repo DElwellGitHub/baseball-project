@@ -15,6 +15,8 @@ from airflow.providers.amazon.aws.transfers.sql_to_s3 import SqlToS3Operator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 from tempfile import NamedTemporaryFile
+from airflow.utils.db import provide_session
+from airflow.models import XCom
 
 dag = DAG(
     dag_id = "get_todays_gamesv4",
@@ -25,7 +27,7 @@ dag = DAG(
 )
 
 
-def todays_games(ti,
+def _call_games(ti,
                  start_date=dt.datetime.now().strftime('%m/%d/%Y'),
                  end_date=dt.datetime.now().strftime('%m/%d/%Y')):
     games = schedule(start_date=start_date,end_date=end_date)
@@ -70,14 +72,14 @@ def postgres_to_s3(ds):
 
 print_start = BashOperator(
     task_id="print_start",
-    bash_command="echo starting",
+    bash_command="echo starting dag",
     dag=dag,
     do_xcom_push=False
 )
 
 call_games = PythonOperator(
     task_id="call_games",
-    python_callable=todays_games,
+    python_callable=_call_games,
     dag=dag
 )
 
@@ -91,7 +93,7 @@ test_postgres1 = PostgresOperator(
     task_id='create_postgres_table',
     postgres_conn_id='postgres_localhost',
     sql = '''
-        create table if not exists test_table (
+        create or replace table games_today (
             colA varchar(2),
             colB int,
             colC decimal
@@ -135,10 +137,26 @@ sql_to_s3 = PythonOperator(
 
 print_end = BashOperator(
     task_id="print_end",
-    bash_command="echo end!",
+    bash_command="echo end dag!",
     dag=dag,
     do_xcom_push=False
 )
+@provide_session
+def _delete_xcoms(session=None):
+    num_rows_deleted = 0
 
-print_start >> call_games >> write_games_s3  >> print_end
-print_start >> test_postgres1 >> test_postgres2 >> test_postgres3 >> test_postgres4 >> sql_to_s3 >> print_end
+    try:
+        num_rows_deleted = session.query(XCom).delete()
+        session.commit()
+    except:
+        session.rollback()
+
+    print(f"Deleted {num_rows_deleted} XCom rows")
+
+delete_xcoms = PythonOperator(task_id="delete_xcoms", python_callable=_delete_xcoms)
+
+print_start >> call_games >> delete_xcoms
+# print_start >> create_sql_table
+# call_games >> write_games_sql
+# create_sql_table >> write_games_sql
+# write_games_sql >> sql_to_s3 >> print_end

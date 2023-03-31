@@ -1309,3 +1309,17 @@ ModuleNotFoundError: No module named 'tempofile'
 [2023-03-30T02:54:02.063+0000] {logging_mixin.py:137} INFO - [2023-03-30T02:54:02.063+0000] {dag.py:2693} INFO - Sync 1 DAGs
 [2023-03-30T02:54:02.291+0000] {logging_mixin.py:137} INFO - [2023-03-30T02:54:02.291+0000] {dag.py:3444} INFO - Setting next_dagrun for get_todays_gamesv4 to None, run_after=None
 [2023-03-30T02:54:02.311+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_games.py took 0.486 seconds
+[2023-03-30T02:54:32.485+0000] {processor.py:153} INFO - Started process (PID=2250) to work on /opt/airflow/dags/todays_games.py
+[2023-03-30T02:54:32.494+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_games.py for tasks to queue
+[2023-03-30T02:54:32.495+0000] {logging_mixin.py:137} INFO - [2023-03-30T02:54:32.495+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_games.py
+[2023-03-30T02:54:32.908+0000] {processor.py:753} INFO - DAG(s) dict_keys(['get_todays_gamesv4']) retrieved from /opt/airflow/dags/todays_games.py
+[2023-03-30T02:54:32.960+0000] {logging_mixin.py:137} INFO - [2023-03-30T02:54:32.960+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-03-30T02:54:32.994+0000] {logging_mixin.py:137} INFO - [2023-03-30T02:54:32.994+0000] {dag.py:3444} INFO - Setting next_dagrun for get_todays_gamesv4 to None, run_after=None
+[2023-03-30T02:54:33.033+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_games.py took 0.552 seconds
+[2023-03-30T02:55:03.520+0000] {processor.py:153} INFO - Started process (PID=2299) to work on /opt/airflow/dags/todays_games.py
+[2023-03-30T02:55:03.521+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_games.py for tasks to queue
+[2023-03-30T02:55:03.522+0000] {logging_mixin.py:137} INFO - [2023-03-30T02:55:03.522+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_games.py
+[2023-03-30T02:55:03.718+0000] {processor.py:753} INFO - DAG(s) dict_keys(['get_todays_gamesv4']) retrieved from /opt/airflow/dags/todays_games.py
+[2023-03-30T02:55:03.751+0000] {logging_mixin.py:137} INFO - [2023-03-30T02:55:03.750+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-03-30T02:55:03.785+0000] {logging_mixin.py:137} INFO - [2023-03-30T02:55:03.784+0000] {dag.py:3444} INFO - Setting next_dagrun for get_todays_gamesv4 to None, run_after=None
+[2023-03-30T02:55:03.807+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_games.py took 0.292 seconds

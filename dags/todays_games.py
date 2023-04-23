@@ -20,7 +20,7 @@ from airflow.models import XCom
 
 dag = DAG(
     dag_id = "get_todays_gamesv4",
-    start_date = dt.datetime(2023, 3, 22),
+    start_date = dt.datetime.now(),
     #schedule_interval="0 10 * * *",
     schedule_interval=None
     #catchup=True
@@ -38,10 +38,14 @@ def _call_games(ti,
         i+=1
     ti.xcom_push(key=f'games',value=games_dict)
 
-def write_games(ti):
-    games_data = ti.xcom_pull(key='games')
-    for k,v in games_data.items():
-        print(v)
+def _write_insert_query(ti,ds):
+    games = ti.xcom_pull(key=f'games')
+    sql_query = ''
+    for k,v in games.items():
+        sql_query = sql_query + '\n' + f'''INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES ('{v['away_name']}','{v['home_name']}','{v['away_probable_pitcher']}','{v['home_probable_pitcher']}','{v['venue_name']}');'''
+    ti.xcom_push(key=f'insert_statements',value=sql_query)
+
 
 def postgres_to_s3(ds):
     #https://www.youtube.com/watch?v=rcG4WNwi900
@@ -49,7 +53,7 @@ def postgres_to_s3(ds):
     hook = PostgresHook(postgres_conn_id="postgres_localhost")
     conn = hook.get_conn()
     cursor = conn.cursor()
-    cursor.execute('select * from test_table;')
+    cursor.execute('select * from games;')
     with NamedTemporaryFile(mode='w') as f: #puts file in temp folder
 
     #with open('dags/test_data.txt','w') as f:
@@ -59,12 +63,12 @@ def postgres_to_s3(ds):
         f.flush()
         cursor.close()
         conn.close()
-        logging.info(f'Ran this on {ds}. Saved postgres data in text file: test_data.txt')
+        logging.info(f'Ran this on {ds}. Saved postgres data in text file: games.txt')
     #step 2: upload text file into s3
         s3_hook = S3Hook(aws_conn_id='aws_hook')
         s3_hook.load_file(
             filename=f.name,
-            key=f'games/test_data.txt',
+            key=f'games/games ({ds}).txt',
             bucket_name='mlb-project',
             replace=True
         )
@@ -81,52 +85,6 @@ call_games = PythonOperator(
     task_id="call_games",
     python_callable=_call_games,
     dag=dag
-)
-
-write_games_s3 = PythonOperator(
-    task_id = "write_games_s3",
-    python_callable = write_games,
-    dag=dag
-)
-
-test_postgres1 = PostgresOperator(
-    task_id='create_postgres_table',
-    postgres_conn_id='postgres_localhost',
-    sql = '''
-        create or replace table games_today (
-            colA varchar(2),
-            colB int,
-            colC decimal
-        );
-    '''
-
-)
-
-test_postgres2 = PostgresOperator(
-    task_id='insert1',
-    postgres_conn_id='postgres_localhost',
-    sql = '''
-        insert into test_table
-        values ('AB', 9, 3.2);
-        
-    '''
-)
-
-test_postgres3 = PostgresOperator(
-    task_id='insert2',
-    postgres_conn_id='postgres_localhost',
-    sql = '''
-        insert into test_table
-        values ('XY', 2, 2.1);
-    '''
-)
-
-test_postgres4 = PostgresOperator(
-    task_id='read',
-    postgres_conn_id='postgres_localhost',
-    sql = '''
-        select colA,colB from test_table;
-    '''
 )
 
 sql_to_s3 = PythonOperator(
@@ -155,8 +113,34 @@ def _delete_xcoms(session=None):
 
 delete_xcoms = PythonOperator(task_id="delete_xcoms", python_callable=_delete_xcoms)
 
-print_start >> call_games >> delete_xcoms
-# print_start >> create_sql_table
-# call_games >> write_games_sql
-# create_sql_table >> write_games_sql
-# write_games_sql >> sql_to_s3 >> print_end
+create_sql_table = PostgresOperator(
+    task_id='create_sql_table_task',
+    postgres_conn_id='postgres_localhost',
+    sql = '''
+        drop table if exists games;
+        create table games (
+            away_name VARCHAR(40),
+            home_name VARCHAR(40),
+            away_probable_pitcher VARCHAR(40),
+            home_probable_pitcher VARCHAR(40),
+            venue_name VARCHAR(40)
+            );
+    '''
+)
+
+write_insert_query= PythonOperator(
+    task_id = 'write_insert_query_task',
+    python_callable= _write_insert_query,
+    dag=dag
+)
+
+exec_insert_query = PostgresOperator(
+    task_id='exec_insert_query_task',
+    postgres_conn_id='postgres_localhost',
+    sql ='{{ ti.xcom_pull(key="insert_statements") }}'
+)
+
+
+print_start >> [call_games, create_sql_table] 
+call_games >> write_insert_query 
+[create_sql_table,write_insert_query] >> exec_insert_query >> [sql_to_s3, delete_xcoms] >>  print_end

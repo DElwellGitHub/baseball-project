@@ -1,0 +1,28 @@
+[2023-04-03T02:37:21.973+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv4.print_start manual__2023-04-03T02:37:19.358160+00:00 [queued]>
+[2023-04-03T02:37:21.996+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv4.print_start manual__2023-04-03T02:37:19.358160+00:00 [queued]>
+[2023-04-03T02:37:21.996+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-03T02:37:21.996+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-04-03T02:37:21.996+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-03T02:37:22.038+0000] {taskinstance.py:1303} INFO - Executing <Task(BashOperator): print_start> on 2023-04-03 02:37:19.358160+00:00
+[2023-04-03T02:37:22.053+0000] {standard_task_runner.py:55} INFO - Started process 1378 to run task
+[2023-04-03T02:37:22.070+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv4', 'print_start', 'manual__2023-04-03T02:37:19.358160+00:00', '--job-id', '147', '--raw', '--subdir', 'DAGS_FOLDER/todays_games.py', '--cfg-path', '/tmp/tmpfyn0z3_c']
+[2023-04-03T02:37:22.070+0000] {standard_task_runner.py:83} INFO - Job 147: Subtask print_start
+[2023-04-03T02:37:22.195+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv4.print_start manual__2023-04-03T02:37:19.358160+00:00 [running]> on host bb4d827b1601
+[2023-04-03T02:37:22.397+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv4
+AIRFLOW_CTX_TASK_ID=print_start
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-03T02:37:19.358160+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-03T02:37:19.358160+00:00
+[2023-04-03T02:37:22.399+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-04-03T02:37:22.399+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo starting dag']
+[2023-04-03T02:37:22.465+0000] {subprocess.py:86} INFO - Output:
+[2023-04-03T02:37:22.468+0000] {subprocess.py:93} INFO - starting dag
+[2023-04-03T02:37:22.469+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-04-03T02:37:22.520+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv4, task_id=print_start, execution_date=20230403T023719, start_date=20230403T023721, end_date=20230403T023722
+[2023-04-03T02:37:22.639+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-04-03T02:37:22.695+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check

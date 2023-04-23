@@ -1,0 +1,102 @@
+[2023-04-03T02:37:29.697+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv4.exec_insert_query_task manual__2023-04-03T02:37:19.358160+00:00 [queued]>
+[2023-04-03T02:37:29.707+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv4.exec_insert_query_task manual__2023-04-03T02:37:19.358160+00:00 [queued]>
+[2023-04-03T02:37:29.707+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-03T02:37:29.707+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-04-03T02:37:29.707+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-03T02:37:29.724+0000] {taskinstance.py:1303} INFO - Executing <Task(PostgresOperator): exec_insert_query_task> on 2023-04-03 02:37:19.358160+00:00
+[2023-04-03T02:37:29.730+0000] {standard_task_runner.py:55} INFO - Started process 1390 to run task
+[2023-04-03T02:37:29.736+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv4', 'exec_insert_query_task', 'manual__2023-04-03T02:37:19.358160+00:00', '--job-id', '153', '--raw', '--subdir', 'DAGS_FOLDER/todays_games.py', '--cfg-path', '/tmp/tmp0brzqpdo']
+[2023-04-03T02:37:29.737+0000] {standard_task_runner.py:83} INFO - Job 153: Subtask exec_insert_query_task
+[2023-04-03T02:37:29.805+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv4.exec_insert_query_task manual__2023-04-03T02:37:19.358160+00:00 [running]> on host bb4d827b1601
+[2023-04-03T02:37:29.900+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv4
+AIRFLOW_CTX_TASK_ID=exec_insert_query_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-03T02:37:19.358160+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-03T02:37:19.358160+00:00
+[2023-04-03T02:37:29.901+0000] {sql.py:254} INFO - Executing: 
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (New York Mets,Milwaukee Brewers,Carlos Carrasco,Freddy Peralta,American Family Field);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (San Francisco Giants,Chicago White Sox,Anthony DeSclafani,Michael Kopech,Guaranteed Rate Field);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Chicago Cubs,Cincinnati Reds,Drew Smyly,Connor Overton,Great American Ball Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Minnesota Twins,Miami Marlins,Tyler Mahle,Johnny Cueto,loanDepot park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Tampa Bay Rays,Washington Nationals,Drew Rasmussen,Trevor Williams,Nationals Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Philadelphia Phillies,New York Yankees,Taijuan Walker,Nestor Cortes,Yankee Stadium);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Pittsburgh Pirates,Boston Red Sox,Johan Oviedo,Kutter Crawford,Fenway Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Toronto Blue Jays,Kansas City Royals,Jose Berrios,Brady Singer,Kauffman Stadium);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Atlanta Braves,St. Louis Cardinals,Charlie Morton,Jake Woodford,Busch Stadium);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Baltimore Orioles,Texas Rangers,Kyle Bradish,Jon Gray,Globe Life Field);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Detroit Tigers,Houston Astros,Matthew Boyd,Hunter Brown,Minute Maid Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Cleveland Guardians,Oakland Athletics,Zach Plesac,James Kaprielian,Oakland Coliseum);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Arizona Diamondbacks,San Diego Padres,Ryne Nelson,Ryan Weathers,Petco Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Los Angeles Angels,Seattle Mariners,Reid Detmers,George Kirby,T-Mobile Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Colorado Rockies,Los Angeles Dodgers,Ryan Feltner,Michael Grove,Dodger Stadium);
+[2023-04-03T02:37:29.910+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-04-03T02:37:30.213+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-04-03T02:37:30.216+0000] {sql.py:375} INFO - Running statement: 
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (New York Mets,Milwaukee Brewers,Carlos Carrasco,Freddy Peralta,American Family Field);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (San Francisco Giants,Chicago White Sox,Anthony DeSclafani,Michael Kopech,Guaranteed Rate Field);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Chicago Cubs,Cincinnati Reds,Drew Smyly,Connor Overton,Great American Ball Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Minnesota Twins,Miami Marlins,Tyler Mahle,Johnny Cueto,loanDepot park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Tampa Bay Rays,Washington Nationals,Drew Rasmussen,Trevor Williams,Nationals Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Philadelphia Phillies,New York Yankees,Taijuan Walker,Nestor Cortes,Yankee Stadium);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Pittsburgh Pirates,Boston Red Sox,Johan Oviedo,Kutter Crawford,Fenway Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Toronto Blue Jays,Kansas City Royals,Jose Berrios,Brady Singer,Kauffman Stadium);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Atlanta Braves,St. Louis Cardinals,Charlie Morton,Jake Woodford,Busch Stadium);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Baltimore Orioles,Texas Rangers,Kyle Bradish,Jon Gray,Globe Life Field);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Detroit Tigers,Houston Astros,Matthew Boyd,Hunter Brown,Minute Maid Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Cleveland Guardians,Oakland Athletics,Zach Plesac,James Kaprielian,Oakland Coliseum);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Arizona Diamondbacks,San Diego Padres,Ryne Nelson,Ryan Weathers,Petco Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Los Angeles Angels,Seattle Mariners,Reid Detmers,George Kirby,T-Mobile Park);
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name)
+                                   VALUES (Colorado Rockies,Los Angeles Dodgers,Ryan Feltner,Michael Grove,Dodger Stadium);, parameters: None
+[2023-04-03T02:37:30.218+0000] {taskinstance.py:1775} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 266, in execute
+    **extra_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 349, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 380, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: syntax error at or near "York"
+LINE 3:                                    VALUES (New York Mets,Mil...
+                                                       ^
+
+[2023-04-03T02:37:30.229+0000] {taskinstance.py:1326} INFO - Marking task as FAILED. dag_id=get_todays_gamesv4, task_id=exec_insert_query_task, execution_date=20230403T023719, start_date=20230403T023729, end_date=20230403T023730
+[2023-04-03T02:37:30.245+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 153 for task exec_insert_query_task (syntax error at or near "York"
+LINE 3:                                    VALUES (New York Mets,Mil...
+                                                       ^
+; 1390)
+[2023-04-03T02:37:30.268+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-04-03T02:37:30.302+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

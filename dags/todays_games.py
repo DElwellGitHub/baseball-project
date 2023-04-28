@@ -29,8 +29,9 @@ dag = DAG(
 
 def _call_games(ti,
                  start_date=dt.datetime.now().strftime('%m/%d/%Y'),
-                 end_date=dt.datetime.now().strftime('%m/%d/%Y')):
-    games = schedule(start_date=start_date,end_date=end_date)
+                 end_date=dt.datetime.now().strftime('%m/%d/%Y'),
+                 team=147):
+    games = schedule(start_date=start_date,end_date=end_date,team=team)
     games_dict = {}
     i = 0
     for g in games:
@@ -68,7 +69,7 @@ def postgres_to_s3(ds):
         s3_hook = S3Hook(aws_conn_id='aws_hook')
         s3_hook.load_file(
             filename=f.name,
-            key=f'games/games ({ds}).txt',
+            key=f'games/games ({ds}).csv',
             bucket_name='mlb-project',
             replace=True
         )

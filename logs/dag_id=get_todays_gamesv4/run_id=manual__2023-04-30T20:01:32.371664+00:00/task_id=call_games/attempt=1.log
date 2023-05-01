@@ -1,0 +1,23 @@
+[2023-04-30T20:01:36.443+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv4.call_games manual__2023-04-30T20:01:32.371664+00:00 [queued]>
+[2023-04-30T20:01:36.457+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv4.call_games manual__2023-04-30T20:01:32.371664+00:00 [queued]>
+[2023-04-30T20:01:36.464+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-30T20:01:36.465+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-04-30T20:01:36.465+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-30T20:01:36.492+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): call_games> on 2023-04-30 20:01:32.371664+00:00
+[2023-04-30T20:01:36.509+0000] {standard_task_runner.py:55} INFO - Started process 828 to run task
+[2023-04-30T20:01:36.518+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv4', 'call_games', 'manual__2023-04-30T20:01:32.371664+00:00', '--job-id', '570', '--raw', '--subdir', 'DAGS_FOLDER/todays_games.py', '--cfg-path', '/tmp/tmppfraethp']
+[2023-04-30T20:01:36.526+0000] {standard_task_runner.py:83} INFO - Job 570: Subtask call_games
+[2023-04-30T20:01:36.701+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv4.call_games manual__2023-04-30T20:01:32.371664+00:00 [running]> on host f789e77bc70a
+[2023-04-30T20:01:36.887+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv4
+AIRFLOW_CTX_TASK_ID=call_games
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-30T20:01:32.371664+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-30T20:01:32.371664+00:00
+[2023-04-30T20:01:37.158+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-04-30T20:01:37.176+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv4, task_id=call_games, execution_date=20230430T200132, start_date=20230430T200136, end_date=20230430T200137
+[2023-04-30T20:01:37.222+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-04-30T20:01:37.314+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check

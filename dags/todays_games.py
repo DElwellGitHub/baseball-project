@@ -20,10 +20,10 @@ from airflow.models import XCom
 
 dag = DAG(
     dag_id = "get_todays_gamesv4",
-    start_date = dt.datetime.now(),
-    #schedule_interval="0 10 * * *",
-    schedule_interval=None
-    #catchup=True
+    start_date = dt.datetime(2023,4,1),
+    end_date = dt.datetime(2023,10,1),
+    schedule_interval="0 15 * * *",
+    catchup=False
 )
 
 
@@ -69,7 +69,7 @@ def postgres_to_s3(ds):
         s3_hook = S3Hook(aws_conn_id='aws_hook')
         s3_hook.load_file(
             filename=f.name,
-            key=f'games/games ({ds}).csv',
+            key=f'games/games_{ds}.csv',
             bucket_name='mlb-project',
             replace=True
         )

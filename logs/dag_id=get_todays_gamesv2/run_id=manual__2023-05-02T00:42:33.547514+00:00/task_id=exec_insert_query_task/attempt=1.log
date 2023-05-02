@@ -1,0 +1,33 @@
+[2023-05-02T00:42:40.401+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv2.exec_insert_query_task manual__2023-05-02T00:42:33.547514+00:00 [queued]>
+[2023-05-02T00:42:40.417+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv2.exec_insert_query_task manual__2023-05-02T00:42:33.547514+00:00 [queued]>
+[2023-05-02T00:42:40.417+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-02T00:42:40.418+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-02T00:42:40.418+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-02T00:42:40.438+0000] {taskinstance.py:1303} INFO - Executing <Task(PostgresOperator): exec_insert_query_task> on 2023-05-02 00:42:33.547514+00:00
+[2023-05-02T00:42:40.446+0000] {standard_task_runner.py:55} INFO - Started process 32700 to run task
+[2023-05-02T00:42:40.450+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv2', 'exec_insert_query_task', 'manual__2023-05-02T00:42:33.547514+00:00', '--job-id', '722', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv2.py', '--cfg-path', '/tmp/tmp7sb2ggui']
+[2023-05-02T00:42:40.451+0000] {standard_task_runner.py:83} INFO - Job 722: Subtask exec_insert_query_task
+[2023-05-02T00:42:40.560+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv2.exec_insert_query_task manual__2023-05-02T00:42:33.547514+00:00 [running]> on host f789e77bc70a
+[2023-05-02T00:42:40.687+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv2
+AIRFLOW_CTX_TASK_ID=exec_insert_query_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-02T00:42:33.547514+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-02T00:42:33.547514+00:00
+[2023-05-02T00:42:40.688+0000] {sql.py:254} INFO - Executing: 
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name,game_date)
+                                   VALUES ('Cleveland Guardians','New York Yankees','Tanner Bibee',
+                                   'Gerrit Cole','Yankee Stadium','2023-05-02');
+[2023-05-02T00:42:40.702+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-05-02T00:42:41.001+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-05-02T00:42:41.007+0000] {sql.py:375} INFO - Running statement: 
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name,game_date)
+                                   VALUES ('Cleveland Guardians','New York Yankees','Tanner Bibee',
+                                   'Gerrit Cole','Yankee Stadium','2023-05-02');, parameters: None
+[2023-05-02T00:42:41.008+0000] {sql.py:384} INFO - Rows affected: 1
+[2023-05-02T00:42:41.022+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv2, task_id=exec_insert_query_task, execution_date=20230502T004233, start_date=20230502T004240, end_date=20230502T004241
+[2023-05-02T00:42:41.066+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-02T00:42:41.105+0000] {taskinstance.py:2585} INFO - 2 downstream tasks scheduled from follow-on schedule check

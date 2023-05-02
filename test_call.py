@@ -4,9 +4,11 @@ from datetime import datetime
 
 
 games = schedule(start_date=dt.datetime.now().strftime('%m/%d/%Y'),
-                 end_date=dt.datetime.now().strftime('%m/%d/%Y'))
+                 end_date=dt.datetime.now().strftime('%m/%d/%Y'),
+                 team=147)
 
 if __name__=='__main__':
     games = schedule(start_date=dt.datetime.now().strftime('%m/%d/%Y'),
-                 end_date=dt.datetime.now().strftime('%m/%d/%Y'))
+                 end_date=dt.datetime.now().strftime('%m/%d/%Y'),
+                 team=147)
     print(games)

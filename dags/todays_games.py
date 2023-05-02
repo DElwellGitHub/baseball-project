@@ -19,7 +19,7 @@ from airflow.utils.db import provide_session
 from airflow.models import XCom
 
 dag = DAG(
-    dag_id = "get_todays_gamesv4",
+    dag_id = "get_todays_games",
     start_date = dt.datetime(2023,4,1),
     end_date = dt.datetime(2023,10,1),
     schedule_interval="0 15 * * *",

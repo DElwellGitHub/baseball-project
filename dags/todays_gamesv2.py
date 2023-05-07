@@ -40,6 +40,38 @@ def _call_games(ti,
         i+=1
     ti.xcom_push(key=f'games',value=games_dict)
 
+def _call_standings(ti):
+    games = ti.xcom_pull(key=f'games')
+    print(games)
+    for v in games.values():
+        home_team = v['home_name']
+        away_team = v['away_name']
+    standings = standings_data()
+    for v in standings.values():
+        for team in v['teams']:
+            if team['name'] == home_team:
+                home_wins = team['w']
+                home_losses = team['l']
+                if team['gb']=='-':
+                    home_gb = 0
+                else:
+                    home_gb = float(team['gb'])
+            if team['name'] == away_team:
+                away_wins = team['w']
+                away_losses = team['l']
+                if team['gb']=='-':
+                    away_gb = 0
+                else:
+                    away_gb = float(team['gb'])
+    games['0']['home_wins'] = home_wins
+    games['0']['home_losses'] = home_losses
+    games['0']['home_gb'] = home_gb
+    games['0']['away_wins'] = away_wins
+    games['0']['away_losses'] = away_losses
+    games['0']['away_gb'] = away_gb
+    print(games)
+
+
 def _check_game_today(ti):
     today_date = dt.datetime.now().strftime('%Y-%m-%d')
     games = ti.xcom_pull(key=f'games')
@@ -106,6 +138,12 @@ call_games = PythonOperator(
     dag=dag
 )
 
+call_standings = PythonOperator(
+    task_id="call_standings",
+    python_callable=_call_standings,
+    dag=dag
+)
+
 sql_to_s3 = PythonOperator(
     dag=dag,
     task_id="postgres_to_s3_task",
@@ -143,7 +181,13 @@ create_sql_table = PostgresOperator(
             away_probable_pitcher VARCHAR(40),
             home_probable_pitcher VARCHAR(40),
             venue_name VARCHAR(40),
-            game_date DATE
+            game_date DATE,
+            home_wins INT,
+            home_losses INT,
+            home_gb DECIMAL,
+            away_wins INT,
+            away_losses INT,
+            away_gb DECIMAL
             );
     '''
 )
@@ -168,4 +212,5 @@ check_game_today = BranchPythonOperator(
 
 print_start >> call_games >> check_game_today >> [write_insert_query, print_end]
 call_games >> create_sql_table
+call_games >> call_standings
 [create_sql_table,write_insert_query] >> exec_insert_query >> [sql_to_s3, delete_xcoms] >>  print_end

@@ -17,12 +17,13 @@ from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 from tempfile import NamedTemporaryFile
 from airflow.utils.db import provide_session
 from airflow.models import XCom
+from airflow.operators.python import BranchPythonOperator
 
 dag = DAG(
     dag_id = "get_todays_gamesv2",
     start_date = dt.datetime(2023,4,1),
     end_date = dt.datetime(2023,10,1),
-    schedule_interval=None,
+    schedule_interval="0 15 * * *",
     catchup=False
 )
 
@@ -39,13 +40,20 @@ def _call_games(ti,
         i+=1
     ti.xcom_push(key=f'games',value=games_dict)
 
-#@task.branch
 def _check_game_today(ti):
     today_date = dt.datetime.now().strftime('%Y-%m-%d')
-    print(today_date)
     games = ti.xcom_pull(key=f'games')
     game_date = next(iter(games.values()))['game_date']
-    print(game_date)
+    try:
+        if today_date==game_date:
+            print('There is a game today.')
+            return 'write_insert_query_task'
+        else:
+            print('No game today.')
+            return 'print_end_task'
+    except:
+            print('No game today.')
+            return 'print_end_task'    
 
 
 def _write_insert_query(ti,ds):
@@ -152,12 +160,12 @@ exec_insert_query = PostgresOperator(
     sql ='{{ ti.xcom_pull(key="insert_statements") }}'
 )
 
-check_game_today = PythonOperator(
+check_game_today = BranchPythonOperator(
     task_id='check_game_today_task',
     python_callable=_check_game_today,
     dag=dag
 )
 
-print_start >> [call_games, create_sql_table] >> check_game_today
-call_games >> write_insert_query 
+print_start >> call_games >> check_game_today >> [write_insert_query, print_end]
+call_games >> create_sql_table
 [create_sql_table,write_insert_query] >> exec_insert_query >> [sql_to_s3, delete_xcoms] >>  print_end

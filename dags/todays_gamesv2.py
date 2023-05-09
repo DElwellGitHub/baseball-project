@@ -69,7 +69,7 @@ def _call_standings(ti):
     games['0']['away_wins'] = away_wins
     games['0']['away_losses'] = away_losses
     games['0']['away_gb'] = away_gb
-    print(games)
+    ti.xcom_push(key='games',value=games)
 
 
 def _check_game_today(ti):
@@ -79,7 +79,7 @@ def _check_game_today(ti):
     try:
         if today_date==game_date:
             print('There is a game today.')
-            return 'write_insert_query_task'
+            return 'print_game_today'
         else:
             print('No game today.')
             return 'print_end_task'
@@ -92,9 +92,11 @@ def _write_insert_query(ti,ds):
     games = ti.xcom_pull(key=f'games')
     sql_query = ''
     for k,v in games.items():
-        sql_query = sql_query + '\n' + f'''INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name,game_date)
+        sql_query = sql_query + '\n' + f'''INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name,game_date,
+                                                              home_wins, home_losses, home_gb, away_wins, away_losses, away_gb)
                                    VALUES ('{v['away_name']}','{v['home_name']}','{v['away_probable_pitcher']}',
-                                   '{v['home_probable_pitcher']}','{v['venue_name']}','{v['game_date']}');'''
+                                   '{v['home_probable_pitcher']}','{v['venue_name']}','{v['game_date']}',
+                                   '{v['home_wins']}','{v['home_losses']}','{v['home_gb']}','{v['away_wins']}','{v['away_losses']}','{v['away_gb']}');'''
     ti.xcom_push(key=f'insert_statements',value=sql_query)
 
 
@@ -139,7 +141,7 @@ call_games = PythonOperator(
 )
 
 call_standings = PythonOperator(
-    task_id="call_standings",
+    task_id="call_standings_task",
     python_callable=_call_standings,
     dag=dag
 )
@@ -148,6 +150,13 @@ sql_to_s3 = PythonOperator(
     dag=dag,
     task_id="postgres_to_s3_task",
     python_callable=postgres_to_s3
+)
+
+print_game_today= BashOperator(
+    task_id="print_game_today",
+    bash_command="echo Game today!",
+    dag=dag,
+    do_xcom_push=False
 )
 
 print_end = BashOperator(
@@ -210,7 +219,6 @@ check_game_today = BranchPythonOperator(
     dag=dag
 )
 
-print_start >> call_games >> check_game_today >> [write_insert_query, print_end]
-call_games >> create_sql_table
-call_games >> call_standings
-[create_sql_table,write_insert_query] >> exec_insert_query >> [sql_to_s3, delete_xcoms] >>  print_end
+
+print_start >> call_games >> check_game_today >> [print_game_today, print_end]
+print_game_today >> [call_standings, create_sql_table] >> write_insert_query >> exec_insert_query >> [sql_to_s3, delete_xcoms] >>  print_end

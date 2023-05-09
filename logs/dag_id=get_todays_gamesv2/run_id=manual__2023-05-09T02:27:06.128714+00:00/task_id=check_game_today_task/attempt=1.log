@@ -1,0 +1,27 @@
+[2023-05-09T02:27:10.382+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv2.check_game_today_task manual__2023-05-09T02:27:06.128714+00:00 [queued]>
+[2023-05-09T02:27:10.392+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv2.check_game_today_task manual__2023-05-09T02:27:06.128714+00:00 [queued]>
+[2023-05-09T02:27:10.392+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-09T02:27:10.392+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-09T02:27:10.392+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-09T02:27:10.409+0000] {taskinstance.py:1303} INFO - Executing <Task(BranchPythonOperator): check_game_today_task> on 2023-05-09 02:27:06.128714+00:00
+[2023-05-09T02:27:10.415+0000] {standard_task_runner.py:55} INFO - Started process 843 to run task
+[2023-05-09T02:27:10.419+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv2', 'check_game_today_task', 'manual__2023-05-09T02:27:06.128714+00:00', '--job-id', '1175', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv2.py', '--cfg-path', '/tmp/tmpp8r6v0aw']
+[2023-05-09T02:27:10.420+0000] {standard_task_runner.py:83} INFO - Job 1175: Subtask check_game_today_task
+[2023-05-09T02:27:10.488+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv2.check_game_today_task manual__2023-05-09T02:27:06.128714+00:00 [running]> on host f7ab54451666
+[2023-05-09T02:27:10.578+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv2
+AIRFLOW_CTX_TASK_ID=check_game_today_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-09T02:27:06.128714+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-09T02:27:06.128714+00:00
+[2023-05-09T02:27:10.590+0000] {logging_mixin.py:137} INFO - There is a game today.
+[2023-05-09T02:27:10.590+0000] {python.py:177} INFO - Done. Returned value was: call_standings_task
+[2023-05-09T02:27:10.590+0000] {python.py:211} INFO - Branch callable return call_standings_task
+[2023-05-09T02:27:10.590+0000] {skipmixin.py:155} INFO - Following branch call_standings_task
+[2023-05-09T02:27:10.590+0000] {skipmixin.py:211} INFO - Skipping tasks []
+[2023-05-09T02:27:10.633+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv2, task_id=check_game_today_task, execution_date=20230509T022706, start_date=20230509T022710, end_date=20230509T022710
+[2023-05-09T02:27:10.671+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-09T02:27:10.717+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check

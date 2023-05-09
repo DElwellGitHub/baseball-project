@@ -1,0 +1,25 @@
+[2023-05-08T15:00:06.975+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_standings scheduled__2023-05-07T15:00:00+00:00 [queued]>
+[2023-05-08T15:00:06.985+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_standings scheduled__2023-05-07T15:00:00+00:00 [queued]>
+[2023-05-08T15:00:06.985+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-08T15:00:06.985+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-08T15:00:06.985+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-08T15:00:07.015+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): call_standings> on 2023-05-07 15:00:00+00:00
+[2023-05-08T15:00:07.021+0000] {standard_task_runner.py:55} INFO - Started process 323 to run task
+[2023-05-08T15:00:07.036+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv2', 'call_standings', 'scheduled__2023-05-07T15:00:00+00:00', '--job-id', '1160', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv2.py', '--cfg-path', '/tmp/tmpsvl32n96']
+[2023-05-08T15:00:07.038+0000] {standard_task_runner.py:83} INFO - Job 1160: Subtask call_standings
+[2023-05-08T15:00:07.135+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv2.call_standings scheduled__2023-05-07T15:00:00+00:00 [running]> on host f7ab54451666
+[2023-05-08T15:00:07.285+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv2
+AIRFLOW_CTX_TASK_ID=call_standings
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-07T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-05-07T15:00:00+00:00
+[2023-05-08T15:00:07.321+0000] {logging_mixin.py:137} INFO - {'0': {'game_id': 718255, 'game_datetime': '2023-05-08T23:05:00Z', 'game_date': '2023-05-08', 'game_type': 'R', 'status': 'Scheduled', 'away_name': 'Oakland Athletics', 'home_name': 'New York Yankees', 'away_id': 133, 'home_id': 147, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Nestor Cortes', 'away_probable_pitcher': 'JP Sears', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': '0', 'home_score': '0', 'current_inning': '', 'inning_state': '', 'venue_id': 3313, 'venue_name': 'Yankee Stadium', 'national_broadcasts': [], 'series_status': None, 'summary': '2023-05-08 - Oakland Athletics @ New York Yankees (Scheduled)'}}
+[2023-05-08T15:00:07.484+0000] {logging_mixin.py:137} INFO - {'0': {'game_id': 718255, 'game_datetime': '2023-05-08T23:05:00Z', 'game_date': '2023-05-08', 'game_type': 'R', 'status': 'Scheduled', 'away_name': 'Oakland Athletics', 'home_name': 'New York Yankees', 'away_id': 133, 'home_id': 147, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Nestor Cortes', 'away_probable_pitcher': 'JP Sears', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': '0', 'home_score': '0', 'current_inning': '', 'inning_state': '', 'venue_id': 3313, 'venue_name': 'Yankee Stadium', 'national_broadcasts': [], 'series_status': None, 'summary': '2023-05-08 - Oakland Athletics @ New York Yankees (Scheduled)', 'home_wins': 18, 'home_losses': 17, 'home_gb': 10.0, 'away_wins': 8, 'away_losses': 27, 'away_gb': 13.0}}
+[2023-05-08T15:00:07.484+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-05-08T15:00:07.508+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv2, task_id=call_standings, execution_date=20230507T150000, start_date=20230508T150006, end_date=20230508T150007
+[2023-05-08T15:00:07.574+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-08T15:00:07.602+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -2295,3 +2295,10 @@ TypeError: unsupported operand type(s) for >>: 'list' and 'list'
 [2023-05-09T22:53:07.289+0000] {logging_mixin.py:137} INFO - [2023-05-09T22:53:07.289+0000] {dag.py:2693} INFO - Sync 1 DAGs
 [2023-05-09T22:53:07.352+0000] {logging_mixin.py:137} INFO - [2023-05-09T22:53:07.351+0000] {dag.py:3444} INFO - Setting next_dagrun for get_todays_gamesv2 to 2023-05-09T15:00:00+00:00, run_after=2023-05-10T15:00:00+00:00
 [2023-05-09T22:53:07.678+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.776 seconds
+[2023-05-09T22:53:37.796+0000] {processor.py:153} INFO - Started process (PID=5781) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-09T22:53:37.798+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-09T22:53:37.799+0000] {logging_mixin.py:137} INFO - [2023-05-09T22:53:37.799+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-09T22:53:37.976+0000] {processor.py:753} INFO - DAG(s) dict_keys(['get_todays_gamesv2']) retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-09T22:53:38.007+0000] {logging_mixin.py:137} INFO - [2023-05-09T22:53:38.007+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-09T22:53:38.042+0000] {logging_mixin.py:137} INFO - [2023-05-09T22:53:38.042+0000] {dag.py:3444} INFO - Setting next_dagrun for get_todays_gamesv2 to 2023-05-09T15:00:00+00:00, run_after=2023-05-10T15:00:00+00:00
+[2023-05-09T22:53:38.063+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.270 seconds

@@ -18,6 +18,8 @@ from tempfile import NamedTemporaryFile
 from airflow.utils.db import provide_session
 from airflow.models import XCom
 from airflow.operators.python import BranchPythonOperator
+from functions.scrape_prob import scrape_prob
+from functions.time_change import transform_time
 
 dag = DAG(
     dag_id = "get_todays_gamesv2",
@@ -38,6 +40,11 @@ def _call_games(ti,
     for g in games:
         games_dict[i] = g
         i+=1
+    print(games_dict)
+    game_time = transform_time(games_dict[0]['game_datetime'])
+    print(game_time)
+    games_dict[0]['game_time'] = game_time
+    print(games)
     ti.xcom_push(key=f'games',value=games_dict)
 
 def _call_standings(ti):
@@ -85,18 +92,24 @@ def _check_game_today(ti):
             return 'print_end_task'
     except:
             print('No game today.')
-            return 'print_end_task'    
+            return 'print_end_task'   
+
+def _scrape_prob(ti):
+    win_prob = scrape_prob('NYY')
+    print(f'Win Prob {win_prob}')
+    ti.xcom_push(key='win_prob',value=win_prob)
 
 
 def _write_insert_query(ti,ds):
     games = ti.xcom_pull(key=f'games')
+    win_prob = ti.xcom_pull(key='win_prob')
     sql_query = ''
     for k,v in games.items():
         sql_query = sql_query + '\n' + f'''INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name,game_date,
-                                                              home_wins, home_losses, home_gb, away_wins, away_losses, away_gb)
+                                                              home_wins, home_losses, home_gb, away_wins, away_losses, away_gb, team_win_prob, game_time)
                                    VALUES ('{v['away_name']}','{v['home_name']}','{v['away_probable_pitcher']}',
                                    '{v['home_probable_pitcher']}','{v['venue_name']}','{v['game_date']}',
-                                   '{v['home_wins']}','{v['home_losses']}','{v['home_gb']}','{v['away_wins']}','{v['away_losses']}','{v['away_gb']}');'''
+                                   '{v['home_wins']}','{v['home_losses']}','{v['home_gb']}','{v['away_wins']}','{v['away_losses']}','{v['away_gb']}','{win_prob}','{v['game_time']}');'''
     ti.xcom_push(key=f'insert_statements',value=sql_query)
 
 
@@ -196,7 +209,9 @@ create_sql_table = PostgresOperator(
             home_gb DECIMAL,
             away_wins INT,
             away_losses INT,
-            away_gb DECIMAL
+            away_gb DECIMAL,
+            team_win_prob VARCHAR(4),
+            game_time VARCHAR(9)
             );
     '''
 )
@@ -219,6 +234,13 @@ check_game_today = BranchPythonOperator(
     dag=dag
 )
 
+scrape_win_prob = PythonOperator(
+    task_id = 'scrape_prob_task',
+    python_callable = _scrape_prob,
+    dag=dag
+)
+
 
 print_start >> call_games >> check_game_today >> [print_game_today, print_end]
 print_game_today >> [call_standings, create_sql_table] >> write_insert_query >> exec_insert_query >> [sql_to_s3, delete_xcoms] >>  print_end
+print_game_today >> scrape_win_prob

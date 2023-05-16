@@ -18,33 +18,36 @@ from tempfile import NamedTemporaryFile
 from airflow.utils.db import provide_session
 from airflow.models import XCom
 from airflow.operators.python import BranchPythonOperator
-from functions.scrape_prob import scrape_prob
-from functions.time_change import transform_time
+from functions.functions import *
+import pendulum
 
 dag = DAG(
     dag_id = "get_todays_gamesv2",
-    start_date = dt.datetime(2023,4,1),
-    end_date = dt.datetime(2023,10,1),
-    schedule_interval="0 15 * * *",
+    start_date = dt.datetime(2023,4,1), #Start April 1st
+    end_date = dt.datetime(2023,10,1), #End October 1st
+    schedule_interval="0 15 * * *", #run everyday at 3pm UTC
     catchup=False
 )
 
 
 def _call_games(ti,
-                 start_date=dt.datetime.now().strftime('%m/%d/%Y'),
-                 end_date=dt.datetime.now().strftime('%m/%d/%Y'),
-                 team=147):
-    games = schedule(start_date=start_date,end_date=end_date,team=team)
+                 team=147,
+                 **context):
+    date_call = context['execution_date'].strftime('%m/%d/%Y')
+    print(date_call)
+    games = schedule(start_date=date_call,end_date=date_call,team=team)
     games_dict = {}
     i = 0
     for g in games:
         games_dict[i] = g
         i+=1
     print(games_dict)
-    game_time = transform_time(games_dict[0]['game_datetime'])
-    print(game_time)
-    games_dict[0]['game_time'] = game_time
-    print(games)
+    if games_dict[0]['away_probable_pitcher'].strip()=='':
+        games_dict[0]['away_probable_pitcher'] = 'TBD'
+    if games_dict[0]['home_probable_pitcher'].strip()=='':
+        games_dict[0]['home_probable_pitcher'] = 'TBD'
+    games_dict[0]['game_time'] = datetimeChange(games_dict[0]['game_datetime']).hr24_to_hr12()
+    print(games_dict)
     ti.xcom_push(key=f'games',value=games_dict)
 
 def _call_standings(ti):
@@ -79,8 +82,9 @@ def _call_standings(ti):
     ti.xcom_push(key='games',value=games)
 
 
-def _check_game_today(ti):
-    today_date = dt.datetime.now().strftime('%Y-%m-%d')
+def _check_game_today(ti,**context):
+    today_date = context['execution_date'].strftime('%Y-%m-%d')
+    print(today_date)
     games = ti.xcom_pull(key=f'games')
     game_date = next(iter(games.values()))['game_date']
     try:
@@ -89,13 +93,13 @@ def _check_game_today(ti):
             return 'print_game_today'
         else:
             print('No game today.')
-            return 'print_end_task'
+            return 'print_end'
     except:
             print('No game today.')
-            return 'print_end_task'   
+            return 'print_end'   
 
 def _scrape_prob(ti):
-    win_prob = scrape_prob('NYY')
+    win_prob = scrapeProb('NYY', dt.datetime.now().year).scrape_prob()
     print(f'Win Prob {win_prob}')
     ti.xcom_push(key='win_prob',value=win_prob)
 

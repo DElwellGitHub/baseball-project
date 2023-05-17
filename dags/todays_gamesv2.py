@@ -29,9 +29,8 @@ dag = DAG(
 )
 
 def _call_games(ti,
-                 team=147,
-                 **context):
-    date_call = context['execution_date'].strftime('%m/%d/%Y')
+                 team=147):
+    date_call = dt.datetime.now().strftime('%m/%d/%Y')
     print(date_call)
     games = schedule(start_date=date_call,end_date=date_call,team=team)
     games_dict = {}

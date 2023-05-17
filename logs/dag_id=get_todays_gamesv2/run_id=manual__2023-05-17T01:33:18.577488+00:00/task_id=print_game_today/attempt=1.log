@@ -1,0 +1,28 @@
+[2023-05-17T01:33:24.851+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv2.print_game_today manual__2023-05-17T01:33:18.577488+00:00 [queued]>
+[2023-05-17T01:33:24.865+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv2.print_game_today manual__2023-05-17T01:33:18.577488+00:00 [queued]>
+[2023-05-17T01:33:24.865+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-17T01:33:24.866+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-17T01:33:24.866+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-17T01:33:24.883+0000] {taskinstance.py:1303} INFO - Executing <Task(BashOperator): print_game_today> on 2023-05-17 01:33:18.577488+00:00
+[2023-05-17T01:33:24.891+0000] {standard_task_runner.py:55} INFO - Started process 427 to run task
+[2023-05-17T01:33:24.899+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv2', 'print_game_today', 'manual__2023-05-17T01:33:18.577488+00:00', '--job-id', '1729', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv2.py', '--cfg-path', '/tmp/tmpspzd65mk']
+[2023-05-17T01:33:24.900+0000] {standard_task_runner.py:83} INFO - Job 1729: Subtask print_game_today
+[2023-05-17T01:33:24.980+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv2.print_game_today manual__2023-05-17T01:33:18.577488+00:00 [running]> on host 0dd257a6e4e7
+[2023-05-17T01:33:25.078+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv2
+AIRFLOW_CTX_TASK_ID=print_game_today
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-17T01:33:18.577488+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-17T01:33:18.577488+00:00
+[2023-05-17T01:33:25.081+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-05-17T01:33:25.082+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo Game today!']
+[2023-05-17T01:33:25.096+0000] {subprocess.py:86} INFO - Output:
+[2023-05-17T01:33:25.098+0000] {subprocess.py:93} INFO - Game today!
+[2023-05-17T01:33:25.099+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-05-17T01:33:25.115+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv2, task_id=print_game_today, execution_date=20230517T013318, start_date=20230517T013324, end_date=20230517T013325
+[2023-05-17T01:33:25.151+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-17T01:33:25.198+0000] {taskinstance.py:2585} INFO - 3 downstream tasks scheduled from follow-on schedule check

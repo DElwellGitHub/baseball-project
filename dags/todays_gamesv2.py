@@ -1,6 +1,4 @@
-from statsapi import *
 import datetime as dt
-from datetime import datetime
 import json
 import pathlib
 import airflow
@@ -19,16 +17,16 @@ from airflow.utils.db import provide_session
 from airflow.models import XCom
 from airflow.operators.python import BranchPythonOperator
 from functions.functions import *
-import pendulum
+from statsapi import *
+
 
 dag = DAG(
     dag_id = "get_todays_gamesv2",
     start_date = dt.datetime(2023,4,1), #Start April 1st
     end_date = dt.datetime(2023,10,1), #End October 1st
-    schedule_interval="0 15 * * *", #run everyday at 3pm UTC
+    schedule_interval="0 15 * * *", #run everyday at 3pm UTC (11am Eastern)
     catchup=False
 )
-
 
 def _call_games(ti,
                  team=147,
@@ -125,8 +123,6 @@ def postgres_to_s3(ds):
     cursor = conn.cursor()
     cursor.execute('select * from games;')
     with NamedTemporaryFile(mode='w') as f: #puts file in temp folder
-
-    #with open('dags/test_data.txt','w') as f:
         csv_writer = csv.writer(f)
         csv_writer.writerow([i[0] for i in cursor.description])
         csv_writer.writerows(cursor)

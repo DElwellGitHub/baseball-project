@@ -1,0 +1,29 @@
+[2023-05-16T15:00:03.957+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-15T15:00:00+00:00 [queued]>
+[2023-05-16T15:00:03.976+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-15T15:00:00+00:00 [queued]>
+[2023-05-16T15:00:03.976+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-16T15:00:03.976+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-16T15:00:03.976+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-16T15:00:04.002+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): call_games> on 2023-05-15 15:00:00+00:00
+[2023-05-16T15:00:04.012+0000] {standard_task_runner.py:55} INFO - Started process 136 to run task
+[2023-05-16T15:00:04.016+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv2', 'call_games', 'scheduled__2023-05-15T15:00:00+00:00', '--job-id', '1669', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv2.py', '--cfg-path', '/tmp/tmp3mxvf_zp']
+[2023-05-16T15:00:04.020+0000] {standard_task_runner.py:83} INFO - Job 1669: Subtask call_games
+[2023-05-16T15:00:04.127+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-15T15:00:00+00:00 [running]> on host 79f30fa538b6
+[2023-05-16T15:00:04.259+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv2
+AIRFLOW_CTX_TASK_ID=call_games
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-15T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-05-15T15:00:00+00:00
+[2023-05-16T15:00:04.265+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:313: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2023-05-16T15:00:04.265+0000] {logging_mixin.py:137} INFO - 05/15/2023
+[2023-05-16T15:00:04.507+0000] {logging_mixin.py:137} INFO - {0: {'game_id': 718164, 'game_datetime': '2023-05-15T23:07:00Z', 'game_date': '2023-05-15', 'game_type': 'R', 'status': 'Final', 'away_name': 'New York Yankees', 'home_name': 'Toronto Blue Jays', 'away_id': 147, 'home_id': 141, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Alek Manoah', 'away_probable_pitcher': 'Jimmy Cordero', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': 7, 'home_score': 4, 'current_inning': 9, 'inning_state': 'Bottom', 'venue_id': 14, 'venue_name': 'Rogers Centre', 'national_broadcasts': ['MLBN (out-of-market only)'], 'series_status': 'NYY leads 1-0', 'winning_team': 'New York Yankees', 'losing_team': 'Toronto Blue Jays', 'winning_pitcher': 'Jhony Brito', 'losing_pitcher': 'Alek Manoah', 'save_pitcher': 'Michael King', 'summary': '2023-05-15 - New York Yankees (7) @ Toronto Blue Jays (4) (Final)'}}
+[2023-05-16T15:00:04.508+0000] {logging_mixin.py:137} INFO - {0: {'game_id': 718164, 'game_datetime': '2023-05-15T23:07:00Z', 'game_date': '2023-05-15', 'game_type': 'R', 'status': 'Final', 'away_name': 'New York Yankees', 'home_name': 'Toronto Blue Jays', 'away_id': 147, 'home_id': 141, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Alek Manoah', 'away_probable_pitcher': 'Jimmy Cordero', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': 7, 'home_score': 4, 'current_inning': 9, 'inning_state': 'Bottom', 'venue_id': 14, 'venue_name': 'Rogers Centre', 'national_broadcasts': ['MLBN (out-of-market only)'], 'series_status': 'NYY leads 1-0', 'winning_team': 'New York Yankees', 'losing_team': 'Toronto Blue Jays', 'winning_pitcher': 'Jhony Brito', 'losing_pitcher': 'Alek Manoah', 'save_pitcher': 'Michael King', 'summary': '2023-05-15 - New York Yankees (7) @ Toronto Blue Jays (4) (Final)', 'game_time': '7:07 PM'}}
+[2023-05-16T15:00:04.533+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-05-16T15:00:04.545+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv2, task_id=call_games, execution_date=20230515T150000, start_date=20230516T150003, end_date=20230516T150004
+[2023-05-16T15:00:04.593+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-16T15:00:04.646+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check

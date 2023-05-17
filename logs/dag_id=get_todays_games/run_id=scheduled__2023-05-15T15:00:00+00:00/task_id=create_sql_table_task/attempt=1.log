@@ -1,0 +1,44 @@
+[2023-05-17T01:19:57.767+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_games.create_sql_table_task scheduled__2023-05-15T15:00:00+00:00 [queued]>
+[2023-05-17T01:19:57.807+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_games.create_sql_table_task scheduled__2023-05-15T15:00:00+00:00 [queued]>
+[2023-05-17T01:19:57.808+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-17T01:19:57.808+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-17T01:19:57.808+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-17T01:19:57.860+0000] {taskinstance.py:1303} INFO - Executing <Task(PostgresOperator): create_sql_table_task> on 2023-05-15 15:00:00+00:00
+[2023-05-17T01:19:57.884+0000] {standard_task_runner.py:55} INFO - Started process 90 to run task
+[2023-05-17T01:19:57.909+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_games', 'create_sql_table_task', 'scheduled__2023-05-15T15:00:00+00:00', '--job-id', '1689', '--raw', '--subdir', 'DAGS_FOLDER/todays_games.py', '--cfg-path', '/tmp/tmpht02nbvl']
+[2023-05-17T01:19:57.910+0000] {standard_task_runner.py:83} INFO - Job 1689: Subtask create_sql_table_task
+[2023-05-17T01:19:58.119+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_games.create_sql_table_task scheduled__2023-05-15T15:00:00+00:00 [running]> on host 0dd257a6e4e7
+[2023-05-17T01:19:58.272+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_games
+AIRFLOW_CTX_TASK_ID=create_sql_table_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-15T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-05-15T15:00:00+00:00
+[2023-05-17T01:19:58.275+0000] {sql.py:254} INFO - Executing: 
+        drop table if exists games;
+        create table games (
+            away_name VARCHAR(40),
+            home_name VARCHAR(40),
+            away_probable_pitcher VARCHAR(40),
+            home_probable_pitcher VARCHAR(40),
+            venue_name VARCHAR(40)
+            );
+    
+[2023-05-17T01:19:58.300+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-05-17T01:19:59.842+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-05-17T01:19:59.855+0000] {sql.py:375} INFO - Running statement: 
+        drop table if exists games;
+        create table games (
+            away_name VARCHAR(40),
+            home_name VARCHAR(40),
+            away_probable_pitcher VARCHAR(40),
+            home_probable_pitcher VARCHAR(40),
+            venue_name VARCHAR(40)
+            );
+    , parameters: None
+[2023-05-17T01:19:59.938+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_games, task_id=create_sql_table_task, execution_date=20230515T150000, start_date=20230517T011957, end_date=20230517T011959
+[2023-05-17T01:20:00.018+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-17T01:20:00.194+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,26 @@
+[2023-05-20T15:00:04.684+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-19T15:00:00+00:00 [queued]>
+[2023-05-20T15:00:04.694+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-19T15:00:00+00:00 [queued]>
+[2023-05-20T15:00:04.695+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-20T15:00:04.695+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-20T15:00:04.695+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-20T15:00:04.714+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): call_games> on 2023-05-19 15:00:00+00:00
+[2023-05-20T15:00:04.721+0000] {standard_task_runner.py:55} INFO - Started process 135 to run task
+[2023-05-20T15:00:04.733+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv2', 'call_games', 'scheduled__2023-05-19T15:00:00+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv2.py', '--cfg-path', '/tmp/tmpw0i_x_u3']
+[2023-05-20T15:00:04.733+0000] {standard_task_runner.py:83} INFO - Job 77: Subtask call_games
+[2023-05-20T15:00:04.833+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-19T15:00:00+00:00 [running]> on host 2e718862c733
+[2023-05-20T15:00:04.954+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv2
+AIRFLOW_CTX_TASK_ID=call_games
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-19T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-05-19T15:00:00+00:00
+[2023-05-20T15:00:04.958+0000] {logging_mixin.py:137} INFO - 2023-05-19
+[2023-05-20T15:00:05.202+0000] {logging_mixin.py:137} INFO - {0: {'game_id': 718120, 'game_datetime': '2023-05-19T22:40:00Z', 'game_date': '2023-05-19', 'game_type': 'R', 'status': 'Final', 'away_name': 'New York Yankees', 'home_name': 'Cincinnati Reds', 'away_id': 147, 'home_id': 113, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Ben Lively', 'away_probable_pitcher': 'Clarke Schmidt', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': 6, 'home_score': 2, 'current_inning': 9, 'inning_state': 'Bottom', 'venue_id': 2602, 'venue_name': 'Great American Ball Park', 'national_broadcasts': [], 'series_status': 'NYY leads 1-0', 'winning_team': 'New York Yankees', 'losing_team': 'Cincinnati Reds', 'winning_pitcher': 'Clarke Schmidt', 'losing_pitcher': 'Ben Lively', 'save_pitcher': None, 'summary': '2023-05-19 - New York Yankees (6) @ Cincinnati Reds (2) (Final)'}}
+[2023-05-20T15:00:05.204+0000] {logging_mixin.py:137} INFO - {0: {'game_id': 718120, 'game_datetime': '2023-05-19T22:40:00Z', 'game_date': '2023-05-19', 'game_type': 'R', 'status': 'Final', 'away_name': 'New York Yankees', 'home_name': 'Cincinnati Reds', 'away_id': 147, 'home_id': 113, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Ben Lively', 'away_probable_pitcher': 'Clarke Schmidt', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': 6, 'home_score': 2, 'current_inning': 9, 'inning_state': 'Bottom', 'venue_id': 2602, 'venue_name': 'Great American Ball Park', 'national_broadcasts': [], 'series_status': 'NYY leads 1-0', 'winning_team': 'New York Yankees', 'losing_team': 'Cincinnati Reds', 'winning_pitcher': 'Clarke Schmidt', 'losing_pitcher': 'Ben Lively', 'save_pitcher': None, 'summary': '2023-05-19 - New York Yankees (6) @ Cincinnati Reds (2) (Final)', 'game_time': '6:40 PM'}}
+[2023-05-20T15:00:05.220+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-05-20T15:00:05.232+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv2, task_id=call_games, execution_date=20230519T150000, start_date=20230520T150004, end_date=20230520T150005
+[2023-05-20T15:00:05.264+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-20T15:00:05.304+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check

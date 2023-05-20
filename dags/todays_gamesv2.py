@@ -29,8 +29,9 @@ dag = DAG(
 )
 
 def _call_games(ti,
-                 team=147):
-    date_call = dt.datetime.now().strftime('%m/%d/%Y')
+                 team=147,
+                 **context):
+    date_call = dt.datetime.now().strftime('%Y-%m-%d')
     print(date_call)
     games = schedule(start_date=date_call,end_date=date_call,team=team)
     games_dict = {}
@@ -80,7 +81,7 @@ def _call_standings(ti):
 
 
 def _check_game_today(ti,**context):
-    today_date = context['execution_date'].strftime('%Y-%m-%d')
+    today_date = dt.datetime.now().strftime('%Y-%m-%d')
     print(today_date)
     games = ti.xcom_pull(key=f'games')
     game_date = next(iter(games.values()))['game_date']

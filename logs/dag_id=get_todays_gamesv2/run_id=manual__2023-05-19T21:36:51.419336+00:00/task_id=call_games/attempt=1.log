@@ -1,0 +1,39 @@
+[2023-05-19T21:36:54.509+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_games manual__2023-05-19T21:36:51.419336+00:00 [queued]>
+[2023-05-19T21:36:54.520+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_games manual__2023-05-19T21:36:51.419336+00:00 [queued]>
+[2023-05-19T21:36:54.521+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-19T21:36:54.521+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-19T21:36:54.521+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-19T21:36:54.540+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): call_games> on 2023-05-19 21:36:51.419336+00:00
+[2023-05-19T21:36:54.546+0000] {standard_task_runner.py:55} INFO - Started process 341 to run task
+[2023-05-19T21:36:54.553+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv2', 'call_games', 'manual__2023-05-19T21:36:51.419336+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv2.py', '--cfg-path', '/tmp/tmpc5xzf6kj']
+[2023-05-19T21:36:54.554+0000] {standard_task_runner.py:83} INFO - Job 59: Subtask call_games
+[2023-05-19T21:36:54.724+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv2.call_games manual__2023-05-19T21:36:51.419336+00:00 [running]> on host 2e718862c733
+[2023-05-19T21:36:54.840+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv2
+AIRFLOW_CTX_TASK_ID=call_games
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-19T21:36:51.419336+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-19T21:36:51.419336+00:00
+[2023-05-19T21:36:54.844+0000] {logging_mixin.py:137} INFO - {{ dag_run.logical_date }}
+[2023-05-19T21:36:55.049+0000] {taskinstance.py:1775} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/todays_gamesv2.py", line 35, in _call_games
+    games = schedule(start_date=date_call,end_date=date_call,team=team)
+  File "/opt/airflow/dags/statsapi/__init__.py", line 94, in schedule
+    r = get("schedule", params)
+  File "/opt/airflow/dags/statsapi/__init__.py", line 1736, in get
+    r.raise_for_status()
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://statsapi.mlb.com/api/v1/schedule?startDate=%7B%7B%20dag_run.logical_date%20%7D%7D&endDate=%7B%7B%20dag_run.logical_date%20%7D%7D&teamId=147&sportId=1&hydrate=decisions,probablePitcher(note),linescore,broadcasts,game(content(media(epg))),seriesStatus
+[2023-05-19T21:36:55.085+0000] {taskinstance.py:1326} INFO - Marking task as FAILED. dag_id=get_todays_gamesv2, task_id=call_games, execution_date=20230519T213651, start_date=20230519T213654, end_date=20230519T213655
+[2023-05-19T21:36:55.105+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 59 for task call_games (400 Client Error: Bad Request for url: https://statsapi.mlb.com/api/v1/schedule?startDate=%7B%7B%20dag_run.logical_date%20%7D%7D&endDate=%7B%7B%20dag_run.logical_date%20%7D%7D&teamId=147&sportId=1&hydrate=decisions,probablePitcher(note),linescore,broadcasts,game(content(media(epg))),seriesStatus; 341)
+[2023-05-19T21:36:55.124+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-05-19T21:36:55.168+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

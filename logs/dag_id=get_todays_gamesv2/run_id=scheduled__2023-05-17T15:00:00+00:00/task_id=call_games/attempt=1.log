@@ -1,0 +1,52 @@
+[2023-05-18T15:00:04.313+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-17T15:00:00+00:00 [queued]>
+[2023-05-18T15:00:04.329+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-17T15:00:00+00:00 [queued]>
+[2023-05-18T15:00:04.329+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-18T15:00:04.329+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-18T15:00:04.329+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-18T15:00:04.352+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): call_games> on 2023-05-17 15:00:00+00:00
+[2023-05-18T15:00:04.358+0000] {standard_task_runner.py:55} INFO - Started process 132 to run task
+[2023-05-18T15:00:04.370+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv2', 'call_games', 'scheduled__2023-05-17T15:00:00+00:00', '--job-id', '1785', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv2.py', '--cfg-path', '/tmp/tmp2mlcp2gi']
+[2023-05-18T15:00:04.371+0000] {standard_task_runner.py:83} INFO - Job 1785: Subtask call_games
+[2023-05-18T15:00:04.471+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-17T15:00:00+00:00 [running]> on host 51ef8019ddf4
+[2023-05-18T15:00:04.604+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv2
+AIRFLOW_CTX_TASK_ID=call_games
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-17T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-05-17T15:00:00+00:00
+[2023-05-18T15:00:04.608+0000] {logging_mixin.py:137} INFO - 05/18/2023
+[2023-05-18T15:00:04.858+0000] {logging_mixin.py:137} INFO - {0: {'game_id': 718121, 'game_datetime': '2023-05-18T23:07:00Z', 'game_date': '2023-05-18', 'game_type': 'R', 'status': 'Scheduled', 'away_name': 'New York Yankees', 'home_name': 'Toronto Blue Jays', 'away_id': 147, 'home_id': 141, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Jose Berrios', 'away_probable_pitcher': 'Nestor Cortes', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': '0', 'home_score': '0', 'current_inning': '', 'inning_state': '', 'venue_id': 14, 'venue_name': 'Rogers Centre', 'national_broadcasts': ['MLBN (out-of-market only)', 'MLB.tv Free Game'], 'series_status': None, 'summary': '2023-05-18 - New York Yankees @ Toronto Blue Jays (Scheduled)'}}
+[2023-05-18T15:00:04.863+0000] {logging_mixin.py:137} INFO - {0: {'game_id': 718121, 'game_datetime': '2023-05-18T23:07:00Z', 'game_date': '2023-05-18', 'game_type': 'R', 'status': 'Scheduled', 'away_name': 'New York Yankees', 'home_name': 'Toronto Blue Jays', 'away_id': 147, 'home_id': 141, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Jose Berrios', 'away_probable_pitcher': 'Nestor Cortes', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': '0', 'home_score': '0', 'current_inning': '', 'inning_state': '', 'venue_id': 14, 'venue_name': 'Rogers Centre', 'national_broadcasts': ['MLBN (out-of-market only)', 'MLB.tv Free Game'], 'series_status': None, 'summary': '2023-05-18 - New York Yankees @ Toronto Blue Jays (Scheduled)', 'game_time': '7:07 PM'}}
+[2023-05-18T15:00:04.885+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-05-18T15:00:04.898+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv2, task_id=call_games, execution_date=20230517T150000, start_date=20230518T150004, end_date=20230518T150004
+[2023-05-18T15:00:04.951+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-18T15:00:05.007+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-05-18T16:47:08.973+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-17T15:00:00+00:00 [queued]>
+[2023-05-18T16:47:09.001+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-17T15:00:00+00:00 [queued]>
+[2023-05-18T16:47:09.002+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-18T16:47:09.003+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-18T16:47:09.003+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-18T16:47:09.037+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): call_games> on 2023-05-17 15:00:00+00:00
+[2023-05-18T16:47:09.043+0000] {standard_task_runner.py:55} INFO - Started process 121 to run task
+[2023-05-18T16:47:09.049+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv2', 'call_games', 'scheduled__2023-05-17T15:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv2.py', '--cfg-path', '/tmp/tmp0ykk9_rs']
+[2023-05-18T16:47:09.050+0000] {standard_task_runner.py:83} INFO - Job 7: Subtask call_games
+[2023-05-18T16:47:09.157+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv2.call_games scheduled__2023-05-17T15:00:00+00:00 [running]> on host a3bcfe770ad1
+[2023-05-18T16:47:09.259+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv2
+AIRFLOW_CTX_TASK_ID=call_games
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-17T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-05-17T15:00:00+00:00
+[2023-05-18T16:47:09.263+0000] {logging_mixin.py:137} INFO - 05/18/2023
+[2023-05-18T16:47:09.494+0000] {logging_mixin.py:137} INFO - {0: {'game_id': 718121, 'game_datetime': '2023-05-18T23:07:00Z', 'game_date': '2023-05-18', 'game_type': 'R', 'status': 'Scheduled', 'away_name': 'New York Yankees', 'home_name': 'Toronto Blue Jays', 'away_id': 147, 'home_id': 141, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Jose Berrios', 'away_probable_pitcher': 'Nestor Cortes', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': '0', 'home_score': '0', 'current_inning': '', 'inning_state': '', 'venue_id': 14, 'venue_name': 'Rogers Centre', 'national_broadcasts': ['MLBN (out-of-market only)', 'MLB.tv Free Game'], 'series_status': None, 'summary': '2023-05-18 - New York Yankees @ Toronto Blue Jays (Scheduled)'}}
+[2023-05-18T16:47:09.496+0000] {logging_mixin.py:137} INFO - {0: {'game_id': 718121, 'game_datetime': '2023-05-18T23:07:00Z', 'game_date': '2023-05-18', 'game_type': 'R', 'status': 'Scheduled', 'away_name': 'New York Yankees', 'home_name': 'Toronto Blue Jays', 'away_id': 147, 'home_id': 141, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Jose Berrios', 'away_probable_pitcher': 'Nestor Cortes', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': '0', 'home_score': '0', 'current_inning': '', 'inning_state': '', 'venue_id': 14, 'venue_name': 'Rogers Centre', 'national_broadcasts': ['MLBN (out-of-market only)', 'MLB.tv Free Game'], 'series_status': None, 'summary': '2023-05-18 - New York Yankees @ Toronto Blue Jays (Scheduled)', 'game_time': '7:07 PM'}}
+[2023-05-18T16:47:09.516+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-05-18T16:47:09.527+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv2, task_id=call_games, execution_date=20230517T150000, start_date=20230518T164708, end_date=20230518T164709
+[2023-05-18T16:47:09.557+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-18T16:47:09.618+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check

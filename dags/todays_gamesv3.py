@@ -40,6 +40,7 @@ with DAG(dag_id="get_todays_gamesv3",
     check_game_today = BranchPythonOperator(
         task_id='check_game_today_task',
         python_callable=check_game_today._check_game_today,
+        op_args=['']
         dag=dag
     )
 

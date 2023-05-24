@@ -1,24 +1,13 @@
 import datetime as dt
-import json
-import pathlib
 import airflow
-import requests
-import requests.exceptions as requests_exceptions
 import csv
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
-from airflow.providers.postgres.operators.postgres import PostgresOperator
-from airflow.providers.amazon.aws.transfers.sql_to_s3 import SqlToS3Operator
-from airflow.providers.postgres.hooks.postgres import PostgresHook
-from airflow.providers.amazon.aws.hooks.s3 import S3Hook
-from tempfile import NamedTemporaryFile
-from airflow.utils.db import provide_session
-from airflow.models import XCom
 from airflow.operators.python import BranchPythonOperator
-from functions.functions import *
+from airflow.providers.postgres.operators.postgres import PostgresOperator
 from statsapi import *
-from functions import check_game_today
+from functions import check_game_today, _call_games, _call_standings, _scrape_prob, _write_insert_query, postgres_to_s3, _delete_xcoms
 
 
 #Instantiate DAG
@@ -27,7 +16,7 @@ with DAG(dag_id="get_todays_gamesv3",
          end_date = dt.datetime(2023,10,1), #End October 1st
          schedule_interval="0 15 * * *", #run everyday at 3pm UTC (11am Eastern)
          catchup=False,
-         template_searchpath='/airflow-docker/dags/include' #include path to look for external files
+         #template_searchpath=['/home/ubuntu/airflow-docker/dags/include/'] #include path to look for external files
         ) as dag:
 
     print_start = BashOperator(
@@ -40,7 +29,6 @@ with DAG(dag_id="get_todays_gamesv3",
     check_game_today = BranchPythonOperator(
         task_id='check_game_today_task',
         python_callable=check_game_today._check_game_today,
-        op_args=['']
         dag=dag
     )
 
@@ -53,32 +41,34 @@ with DAG(dag_id="get_todays_gamesv3",
 
     call_games = PythonOperator(
         task_id="call_games",
-        python_callable=_call_games,
+        python_callable=_call_games._call_games,
+        op_kwargs = {'team':147},
         dag=dag
     )
 
     call_standings = PythonOperator(
         task_id="call_standings_task",
-        python_callable=_call_standings,
+        python_callable=_call_standings._call_standings,
         dag=dag
     )
 
     scrape_win_prob = PythonOperator(
         task_id = 'scrape_prob_task',
-        python_callable = _scrape_prob,
+        python_callable = _scrape_prob._scrape_prob,
+        op_kwargs = {'short_team_name':'NYY'},
         dag=dag
     )
     
     write_insert_query= PythonOperator(
         task_id = 'write_insert_query_task',
-        python_callable= _write_insert_query,
+        python_callable= _write_insert_query._write_insert_query,
         dag=dag
     )
 
     create_sql_table = PostgresOperator(
         task_id='create_sql_table_task',
         postgres_conn_id='postgres_localhost',
-        sql = 'create_sql_table.sql'
+        sql = '/include/create_table.sql'
     )
 
     exec_insert_query = PostgresOperator(
@@ -90,12 +80,12 @@ with DAG(dag_id="get_todays_gamesv3",
     sql_to_s3 = PythonOperator(
         dag=dag,
         task_id="postgres_to_s3_task",
-        python_callable=postgres_to_s3
+        python_callable=postgres_to_s3.postgres_to_s3
     )
 
     delete_xcoms = PythonOperator(
         task_id="delete_xcoms", 
-        python_callable=_delete_xcoms
+        python_callable=_delete_xcoms._delete_xcoms
     )
 
     print_end = BashOperator(

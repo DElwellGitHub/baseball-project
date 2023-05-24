@@ -1,8 +1,21 @@
 import datetime as dt
 from statsapi import *
 
+class datetimeChange:
+    '''
+    Change time from datetime in UTC to just time in Eastern time zone.
+    '''
+    def __init__(self, orig_datetime):
+        self.orig_datetime = orig_datetime
+    
+    def hr24_to_hr12(self):
+        new_time_24_hr = dt.datetime.strptime(self.orig_datetime, '%Y-%m-%dT%H:%M:%SZ') - dt.timedelta(hours=4)
+        new_time_12_hr = new_time_24_hr.strftime('%I:%M PM').lstrip('0')
+        return new_time_12_hr
+
+
 def _call_games(ti,
-                 team=147):
+                team):
     date_call = dt.datetime.now().strftime('%m/%d/%Y')
     print(date_call)
     games = schedule(start_date=date_call,end_date=date_call,team=team)

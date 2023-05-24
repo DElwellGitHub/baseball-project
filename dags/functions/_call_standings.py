@@ -1,4 +1,5 @@
 from airflow.models import XCom
+from functions.statsapi import standings_data
 
 def _call_standings(ti):
     games = ti.xcom_pull(key=f'games')

@@ -1,0 +1,24 @@
+[2023-05-23T23:20:29.160+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv3.scrape_prob_task manual__2023-05-23T23:20:19.216408+00:00 [queued]>
+[2023-05-23T23:20:29.187+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv3.scrape_prob_task manual__2023-05-23T23:20:19.216408+00:00 [queued]>
+[2023-05-23T23:20:29.187+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-23T23:20:29.188+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-23T23:20:29.188+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-23T23:20:29.218+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): scrape_prob_task> on 2023-05-23 23:20:19.216408+00:00
+[2023-05-23T23:20:29.232+0000] {standard_task_runner.py:55} INFO - Started process 425 to run task
+[2023-05-23T23:20:29.241+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv3', 'scrape_prob_task', 'manual__2023-05-23T23:20:19.216408+00:00', '--job-id', '511', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv3.py', '--cfg-path', '/tmp/tmpa6pa75y6']
+[2023-05-23T23:20:29.243+0000] {standard_task_runner.py:83} INFO - Job 511: Subtask scrape_prob_task
+[2023-05-23T23:20:29.362+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv3.scrape_prob_task manual__2023-05-23T23:20:19.216408+00:00 [running]> on host b03c83f459ca
+[2023-05-23T23:20:29.564+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv3
+AIRFLOW_CTX_TASK_ID=scrape_prob_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-23T23:20:19.216408+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-23T23:20:19.216408+00:00
+[2023-05-23T23:20:30.694+0000] {logging_mixin.py:137} INFO - Win Prob 63%
+[2023-05-23T23:20:30.710+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-05-23T23:20:30.721+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv3, task_id=scrape_prob_task, execution_date=20230523T232019, start_date=20230523T232029, end_date=20230523T232030
+[2023-05-23T23:20:30.753+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-23T23:20:30.798+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check

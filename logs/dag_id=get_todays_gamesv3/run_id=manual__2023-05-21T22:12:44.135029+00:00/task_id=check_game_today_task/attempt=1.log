@@ -1,0 +1,31 @@
+[2023-05-21T22:12:54.357+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv3.check_game_today_task manual__2023-05-21T22:12:44.135029+00:00 [queued]>
+[2023-05-21T22:12:54.367+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv3.check_game_today_task manual__2023-05-21T22:12:44.135029+00:00 [queued]>
+[2023-05-21T22:12:54.367+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-21T22:12:54.367+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-21T22:12:54.368+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-21T22:12:54.384+0000] {taskinstance.py:1303} INFO - Executing <Task(BranchPythonOperator): check_game_today_task> on 2023-05-21 22:12:44.135029+00:00
+[2023-05-21T22:12:54.391+0000] {standard_task_runner.py:55} INFO - Started process 192 to run task
+[2023-05-21T22:12:54.395+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv3', 'check_game_today_task', 'manual__2023-05-21T22:12:44.135029+00:00', '--job-id', '323', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv3.py', '--cfg-path', '/tmp/tmp15kugkb1']
+[2023-05-21T22:12:54.396+0000] {standard_task_runner.py:83} INFO - Job 323: Subtask check_game_today_task
+[2023-05-21T22:12:54.468+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv3.check_game_today_task manual__2023-05-21T22:12:44.135029+00:00 [running]> on host b03c83f459ca
+[2023-05-21T22:12:54.554+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv3
+AIRFLOW_CTX_TASK_ID=check_game_today_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-21T22:12:44.135029+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-21T22:12:44.135029+00:00
+[2023-05-21T22:12:54.556+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:313: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2023-05-21T22:12:54.557+0000] {logging_mixin.py:137} INFO - 2023-05-21
+[2023-05-21T22:12:54.569+0000] {logging_mixin.py:137} INFO - There is a game today.
+[2023-05-21T22:12:54.569+0000] {python.py:177} INFO - Done. Returned value was: print_game_today
+[2023-05-21T22:12:54.570+0000] {python.py:211} INFO - Branch callable return print_game_today
+[2023-05-21T22:12:54.571+0000] {skipmixin.py:155} INFO - Following branch print_game_today
+[2023-05-21T22:12:54.572+0000] {skipmixin.py:211} INFO - Skipping tasks []
+[2023-05-21T22:12:54.619+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv3, task_id=check_game_today_task, execution_date=20230521T221244, start_date=20230521T221254, end_date=20230521T221254
+[2023-05-21T22:12:54.646+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-21T22:12:54.707+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

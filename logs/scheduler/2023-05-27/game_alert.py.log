@@ -180,3 +180,52 @@ ImportError: cannot import name '_call_games' from 'functions' (unknown location
 [2023-05-27T18:53:24.834+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:53:24.834+0000] {dag.py:2693} INFO - Sync 1 DAGs
 [2023-05-27T18:53:24.900+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:53:24.900+0000] {dag.py:3444} INFO - Setting next_dagrun for game_alert to 2023-05-27T15:00:00+00:00, run_after=2023-05-28T15:00:00+00:00
 [2023-05-27T18:53:24.965+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/game_alert.py took 1.093 seconds
+[2023-05-27T18:53:55.823+0000] {processor.py:153} INFO - Started process (PID=15934) to work on /opt/airflow/dags/game_alert.py
+[2023-05-27T18:53:55.823+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/game_alert.py for tasks to queue
+[2023-05-27T18:53:55.824+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:53:55.824+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:53:56.682+0000] {processor.py:753} INFO - DAG(s) dict_keys(['game_alert']) retrieved from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:53:56.729+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:53:56.726+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T18:53:56.764+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:53:56.764+0000] {dag.py:3444} INFO - Setting next_dagrun for game_alert to 2023-05-27T15:00:00+00:00, run_after=2023-05-28T15:00:00+00:00
+[2023-05-27T18:53:56.784+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/game_alert.py took 0.965 seconds
+[2023-05-27T18:54:27.020+0000] {processor.py:153} INFO - Started process (PID=15984) to work on /opt/airflow/dags/game_alert.py
+[2023-05-27T18:54:27.021+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/game_alert.py for tasks to queue
+[2023-05-27T18:54:27.022+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:54:27.022+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:54:27.468+0000] {processor.py:753} INFO - DAG(s) dict_keys(['game_alert']) retrieved from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:54:27.505+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:54:27.504+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T18:54:27.563+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:54:27.563+0000] {dag.py:3444} INFO - Setting next_dagrun for game_alert to 2023-05-27T15:00:00+00:00, run_after=2023-05-28T15:00:00+00:00
+[2023-05-27T18:54:27.603+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/game_alert.py took 0.586 seconds
+[2023-05-27T18:54:57.712+0000] {processor.py:153} INFO - Started process (PID=16038) to work on /opt/airflow/dags/game_alert.py
+[2023-05-27T18:54:57.713+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/game_alert.py for tasks to queue
+[2023-05-27T18:54:57.714+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:54:57.714+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:54:58.238+0000] {processor.py:753} INFO - DAG(s) dict_keys(['game_alert']) retrieved from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:54:58.267+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:54:58.266+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T18:54:58.299+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:54:58.299+0000] {dag.py:3444} INFO - Setting next_dagrun for game_alert to 2023-05-27T15:00:00+00:00, run_after=2023-05-28T15:00:00+00:00
+[2023-05-27T18:54:58.321+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/game_alert.py took 0.613 seconds
+[2023-05-27T18:55:28.500+0000] {processor.py:153} INFO - Started process (PID=16091) to work on /opt/airflow/dags/game_alert.py
+[2023-05-27T18:55:28.501+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/game_alert.py for tasks to queue
+[2023-05-27T18:55:28.502+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:55:28.502+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:55:28.943+0000] {processor.py:753} INFO - DAG(s) dict_keys(['game_alert']) retrieved from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:55:28.973+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:55:28.972+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T18:55:29.005+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:55:29.005+0000] {dag.py:3444} INFO - Setting next_dagrun for game_alert to 2023-05-27T15:00:00+00:00, run_after=2023-05-28T15:00:00+00:00
+[2023-05-27T18:55:29.025+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/game_alert.py took 0.529 seconds
+[2023-05-27T18:55:59.132+0000] {processor.py:153} INFO - Started process (PID=16145) to work on /opt/airflow/dags/game_alert.py
+[2023-05-27T18:55:59.133+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/game_alert.py for tasks to queue
+[2023-05-27T18:55:59.134+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:55:59.134+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:55:59.553+0000] {processor.py:753} INFO - DAG(s) dict_keys(['game_alert']) retrieved from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:55:59.584+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:55:59.583+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T18:55:59.622+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:55:59.621+0000] {dag.py:3444} INFO - Setting next_dagrun for game_alert to 2023-05-27T15:00:00+00:00, run_after=2023-05-28T15:00:00+00:00
+[2023-05-27T18:55:59.643+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/game_alert.py took 0.515 seconds
+[2023-05-27T18:56:30.418+0000] {processor.py:153} INFO - Started process (PID=16196) to work on /opt/airflow/dags/game_alert.py
+[2023-05-27T18:56:30.419+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/game_alert.py for tasks to queue
+[2023-05-27T18:56:30.420+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:56:30.420+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:56:30.869+0000] {processor.py:753} INFO - DAG(s) dict_keys(['game_alert']) retrieved from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:56:30.902+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:56:30.901+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T18:56:30.936+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:56:30.935+0000] {dag.py:3444} INFO - Setting next_dagrun for game_alert to 2023-05-27T15:00:00+00:00, run_after=2023-05-28T15:00:00+00:00
+[2023-05-27T18:56:30.959+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/game_alert.py took 0.545 seconds
+[2023-05-27T18:57:01.033+0000] {processor.py:153} INFO - Started process (PID=16250) to work on /opt/airflow/dags/game_alert.py
+[2023-05-27T18:57:01.033+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/game_alert.py for tasks to queue
+[2023-05-27T18:57:01.034+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:57:01.034+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:57:01.462+0000] {processor.py:753} INFO - DAG(s) dict_keys(['game_alert']) retrieved from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:57:01.492+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:57:01.491+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T18:57:01.526+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:57:01.525+0000] {dag.py:3444} INFO - Setting next_dagrun for game_alert to 2023-05-27T15:00:00+00:00, run_after=2023-05-28T15:00:00+00:00
+[2023-05-27T18:57:01.545+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/game_alert.py took 0.516 seconds

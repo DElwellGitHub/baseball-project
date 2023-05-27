@@ -6,3 +6,5 @@ This project uses Apache Airflow, an open-source orchestration tool developed by
 
 To get the data needed, I use an API for Major League Baseball stats, and I webscrape FiveThirtyEight's MLB predictions page in order to show the odds of the Yankees winning. The resulting message looks similar to this: test
 </p>
+
+![image](https://github.com/DElwell90/baseball-project/assets/26678347/42d2d335-4dc1-415f-9307-637fd22dd62e)

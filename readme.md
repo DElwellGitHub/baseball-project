@@ -11,7 +11,7 @@ To get the data needed, I use an API for Major League Baseball stats, and I webs
 
 ### Data pipeline
 Include image of data pipeline and explanation
-![Flowcharts](https://github.com/DElwell90/baseball-project/assets/26678347/b5d6ad47-7b2a-4bd4-a25d-1a2c5097a32b)
+![Flowcharts (1)](https://github.com/DElwell90/baseball-project/assets/26678347/994d5f54-49cf-42d3-8510-27c503729620)
 
 
 ### MLB API

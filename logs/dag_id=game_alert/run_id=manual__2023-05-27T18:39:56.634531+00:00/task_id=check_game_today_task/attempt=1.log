@@ -1,0 +1,35 @@
+[2023-05-27T18:40:01.158+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: game_alert.check_game_today_task manual__2023-05-27T18:39:56.634531+00:00 [queued]>
+[2023-05-27T18:40:01.168+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: game_alert.check_game_today_task manual__2023-05-27T18:39:56.634531+00:00 [queued]>
+[2023-05-27T18:40:01.169+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-27T18:40:01.169+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-27T18:40:01.169+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-27T18:40:01.185+0000] {taskinstance.py:1303} INFO - Executing <Task(BranchPythonOperator): check_game_today_task> on 2023-05-27 18:39:56.634531+00:00
+[2023-05-27T18:40:01.200+0000] {standard_task_runner.py:55} INFO - Started process 2686 to run task
+[2023-05-27T18:40:01.204+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'game_alert', 'check_game_today_task', 'manual__2023-05-27T18:39:56.634531+00:00', '--job-id', '763', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv3.py', '--cfg-path', '/tmp/tmplitbham_']
+[2023-05-27T18:40:01.210+0000] {standard_task_runner.py:83} INFO - Job 763: Subtask check_game_today_task
+[2023-05-27T18:40:01.300+0000] {task_command.py:388} INFO - Running <TaskInstance: game_alert.check_game_today_task manual__2023-05-27T18:39:56.634531+00:00 [running]> on host b03c83f459ca
+[2023-05-27T18:40:01.382+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=game_alert
+AIRFLOW_CTX_TASK_ID=check_game_today_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-27T18:39:56.634531+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-27T18:39:56.634531+00:00
+[2023-05-27T18:40:01.386+0000] {logging_mixin.py:137} INFO - 2023-05-27
+[2023-05-27T18:40:01.399+0000] {logging_mixin.py:137} INFO - There is a game today.
+[2023-05-27T18:40:01.400+0000] {python.py:177} INFO - Done. Returned value was: print_game_today
+[2023-05-27T18:40:01.400+0000] {python.py:211} INFO - Branch callable return print_game_today
+[2023-05-27T18:40:01.400+0000] {skipmixin.py:155} INFO - Following branch print_game_today
+[2023-05-27T18:40:01.412+0000] {taskinstance.py:1775} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 212, in execute
+    self.skip_all_except(context["ti"], branch)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/skipmixin.py", line 186, in skip_all_except
+    "'branch_task_ids' must contain only valid task_ids. "
+airflow.exceptions.AirflowException: 'branch_task_ids' must contain only valid task_ids. Invalid tasks found: {'print_game_today'}.
+[2023-05-27T18:40:01.416+0000] {taskinstance.py:1326} INFO - Marking task as FAILED. dag_id=game_alert, task_id=check_game_today_task, execution_date=20230527T183956, start_date=20230527T184001, end_date=20230527T184001
+[2023-05-27T18:40:01.432+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 763 for task check_game_today_task ('branch_task_ids' must contain only valid task_ids. Invalid tasks found: {'print_game_today'}.; 2686)
+[2023-05-27T18:40:01.470+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-05-27T18:40:01.505+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

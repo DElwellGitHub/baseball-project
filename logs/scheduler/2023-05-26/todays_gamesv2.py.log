@@ -1,0 +1,406 @@
+[2023-05-26T14:56:03.446+0000] {processor.py:153} INFO - Started process (PID=33) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:56:03.447+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T14:56:03.448+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:56:03.448+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:56:04.215+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:56:04.207+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T14:56:04.216+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:56:04.270+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.838 seconds
+[2023-05-26T14:56:34.923+0000] {processor.py:153} INFO - Started process (PID=85) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:56:34.924+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T14:56:34.925+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:56:34.925+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:56:35.077+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:56:35.076+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T14:56:35.077+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:56:35.098+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.178 seconds
+[2023-05-26T14:57:05.122+0000] {processor.py:153} INFO - Started process (PID=136) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:57:05.123+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T14:57:05.124+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:57:05.123+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:57:05.277+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:57:05.276+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T14:57:05.278+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:57:05.299+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.182 seconds
+[2023-05-26T14:57:35.433+0000] {processor.py:153} INFO - Started process (PID=188) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:57:35.435+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T14:57:35.436+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:57:35.435+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:57:35.587+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:57:35.586+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T14:57:35.588+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:57:35.609+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.180 seconds
+[2023-05-26T14:58:06.087+0000] {processor.py:153} INFO - Started process (PID=241) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:58:06.088+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T14:58:06.089+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:58:06.089+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:58:06.241+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:58:06.240+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T14:58:06.242+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:58:06.264+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.180 seconds
+[2023-05-26T14:58:36.770+0000] {processor.py:153} INFO - Started process (PID=293) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:58:36.771+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T14:58:36.772+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:58:36.772+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:58:36.929+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:58:36.928+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T14:58:36.930+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:58:36.953+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.186 seconds
+[2023-05-26T14:59:07.365+0000] {processor.py:153} INFO - Started process (PID=345) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:59:07.366+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T14:59:07.367+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:59:07.367+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:59:07.520+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:59:07.520+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T14:59:07.521+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:59:07.541+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.179 seconds
+[2023-05-26T14:59:37.868+0000] {processor.py:153} INFO - Started process (PID=397) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:59:37.869+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T14:59:37.870+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:59:37.870+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:59:38.025+0000] {logging_mixin.py:137} INFO - [2023-05-26T14:59:38.024+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T14:59:38.025+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T14:59:38.047+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.182 seconds
+[2023-05-26T15:00:08.584+0000] {processor.py:153} INFO - Started process (PID=449) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:00:08.593+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:00:08.594+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:00:08.594+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:00:08.869+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:00:08.868+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:00:08.877+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:00:08.905+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.325 seconds
+[2023-05-26T15:00:39.146+0000] {processor.py:153} INFO - Started process (PID=500) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:00:39.147+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:00:39.148+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:00:39.148+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:00:39.301+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:00:39.300+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:00:39.301+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:00:39.322+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.180 seconds
+[2023-05-26T15:01:10.251+0000] {processor.py:153} INFO - Started process (PID=552) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:01:10.252+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:01:10.253+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:01:10.252+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:01:10.406+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:01:10.405+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:01:10.407+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:01:10.428+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.181 seconds
+[2023-05-26T15:01:41.011+0000] {processor.py:153} INFO - Started process (PID=604) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:01:41.012+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:01:41.013+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:01:41.013+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:01:41.183+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:01:41.182+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:01:41.183+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:01:41.204+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.197 seconds
+[2023-05-26T15:02:11.952+0000] {processor.py:153} INFO - Started process (PID=656) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:02:11.953+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:02:11.954+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:02:11.954+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:02:12.116+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:02:12.115+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:02:12.117+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:02:12.140+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.192 seconds
+[2023-05-26T15:02:43.046+0000] {processor.py:153} INFO - Started process (PID=707) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:02:43.047+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:02:43.047+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:02:43.047+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:02:43.201+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:02:43.200+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:02:43.201+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:02:43.223+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.180 seconds
+[2023-05-26T15:03:14.213+0000] {processor.py:153} INFO - Started process (PID=759) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:03:14.216+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:03:14.216+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:03:14.216+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:03:14.370+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:03:14.369+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:03:14.370+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:03:14.393+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.184 seconds
+[2023-05-26T15:03:44.545+0000] {processor.py:153} INFO - Started process (PID=811) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:03:44.545+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:03:44.546+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:03:44.546+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:03:44.725+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:03:44.724+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:03:44.725+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:03:44.765+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.225 seconds
+[2023-05-26T15:04:15.301+0000] {processor.py:153} INFO - Started process (PID=870) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:04:15.303+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:04:15.304+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:04:15.304+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:04:15.461+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:04:15.460+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:04:15.461+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:04:15.485+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.187 seconds
+[2023-05-26T15:04:46.031+0000] {processor.py:153} INFO - Started process (PID=922) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:04:46.032+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:04:46.032+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:04:46.032+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:04:46.194+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:04:46.193+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:04:46.195+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:04:46.221+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.194 seconds
+[2023-05-26T15:05:16.692+0000] {processor.py:153} INFO - Started process (PID=974) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:05:16.694+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:05:16.695+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:05:16.695+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:05:16.860+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:05:16.859+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:05:16.860+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:05:16.881+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.193 seconds
+[2023-05-26T15:05:47.250+0000] {processor.py:153} INFO - Started process (PID=1026) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:05:47.250+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:05:47.251+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:05:47.251+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:05:47.430+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:05:47.429+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:05:47.431+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:05:47.453+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.208 seconds
+[2023-05-26T15:06:17.838+0000] {processor.py:153} INFO - Started process (PID=1078) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:06:17.839+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:06:17.839+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:06:17.839+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:06:18.166+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:06:18.165+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:06:18.166+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:06:18.197+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.379 seconds
+[2023-05-26T15:06:49.000+0000] {processor.py:153} INFO - Started process (PID=1130) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:06:49.001+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:06:49.002+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:06:49.001+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:06:49.173+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:06:49.172+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:06:49.173+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:06:49.196+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.200 seconds
+[2023-05-26T15:07:19.770+0000] {processor.py:153} INFO - Started process (PID=1182) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:07:19.772+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:07:19.772+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:07:19.772+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:07:19.926+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:07:19.925+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:07:19.926+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:07:19.948+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.181 seconds
+[2023-05-26T15:07:50.962+0000] {processor.py:153} INFO - Started process (PID=1234) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:07:50.963+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:07:50.963+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:07:50.963+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:07:51.267+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:07:51.266+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:07:51.267+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:07:51.315+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.358 seconds
+[2023-05-26T15:08:21.799+0000] {processor.py:153} INFO - Started process (PID=1286) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:08:21.801+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:08:21.801+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:08:21.801+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:08:21.957+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:08:21.956+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:08:21.957+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:08:21.979+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.184 seconds
+[2023-05-26T15:08:52.561+0000] {processor.py:153} INFO - Started process (PID=1338) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:08:52.567+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:08:52.568+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:08:52.568+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:08:52.725+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:08:52.724+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:08:52.725+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:08:52.750+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.194 seconds
+[2023-05-26T15:09:23.711+0000] {processor.py:153} INFO - Started process (PID=1390) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:09:23.713+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:09:23.714+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:09:23.714+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:09:23.871+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:09:23.870+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:09:23.871+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:09:23.894+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.188 seconds
+[2023-05-26T15:09:54.452+0000] {processor.py:153} INFO - Started process (PID=1442) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:09:54.453+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:09:54.454+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:09:54.454+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:09:54.608+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:09:54.607+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:09:54.608+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:09:54.630+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.181 seconds
+[2023-05-26T15:10:25.600+0000] {processor.py:153} INFO - Started process (PID=1494) to work on /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:10:25.606+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/todays_gamesv2.py for tasks to queue
+[2023-05-26T15:10:25.606+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:10:25.606+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:10:25.765+0000] {logging_mixin.py:137} INFO - [2023-05-26T15:10:25.764+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/todays_gamesv2.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/todays_gamesv2.py", line 19, in <module>
+    from functions.functions import *
+ModuleNotFoundError: No module named 'functions.functions'
+[2023-05-26T15:10:25.766+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/todays_gamesv2.py
+[2023-05-26T15:10:25.792+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/todays_gamesv2.py took 0.196 seconds

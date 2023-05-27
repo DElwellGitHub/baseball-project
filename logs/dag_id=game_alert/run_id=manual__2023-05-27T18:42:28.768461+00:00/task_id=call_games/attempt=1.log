@@ -1,0 +1,26 @@
+[2023-05-27T18:42:30.776+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: game_alert.call_games manual__2023-05-27T18:42:28.768461+00:00 [queued]>
+[2023-05-27T18:42:30.787+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: game_alert.call_games manual__2023-05-27T18:42:28.768461+00:00 [queued]>
+[2023-05-27T18:42:30.787+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-27T18:42:30.787+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-27T18:42:30.787+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-27T18:42:30.804+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): call_games> on 2023-05-27 18:42:28.768461+00:00
+[2023-05-27T18:42:30.810+0000] {standard_task_runner.py:55} INFO - Started process 2728 to run task
+[2023-05-27T18:42:30.814+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'game_alert', 'call_games', 'manual__2023-05-27T18:42:28.768461+00:00', '--job-id', '764', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv3.py', '--cfg-path', '/tmp/tmpzbn2ycue']
+[2023-05-27T18:42:30.815+0000] {standard_task_runner.py:83} INFO - Job 764: Subtask call_games
+[2023-05-27T18:42:30.884+0000] {task_command.py:388} INFO - Running <TaskInstance: game_alert.call_games manual__2023-05-27T18:42:28.768461+00:00 [running]> on host b03c83f459ca
+[2023-05-27T18:42:30.969+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=game_alert
+AIRFLOW_CTX_TASK_ID=call_games
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-27T18:42:28.768461+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-27T18:42:28.768461+00:00
+[2023-05-27T18:42:30.974+0000] {logging_mixin.py:137} INFO - 05/27/2023
+[2023-05-27T18:42:31.410+0000] {logging_mixin.py:137} INFO - {0: {'game_id': 718006, 'game_datetime': '2023-05-27T17:05:00Z', 'game_date': '2023-05-27', 'game_type': 'R', 'status': 'In Progress', 'away_name': 'San Diego Padres', 'home_name': 'New York Yankees', 'away_id': 135, 'home_id': 147, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Luis Severino', 'away_probable_pitcher': 'Michael Wacha', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': 2, 'home_score': 1, 'current_inning': 7, 'inning_state': 'Bottom', 'venue_id': 3313, 'venue_name': 'Yankee Stadium', 'national_broadcasts': ['MLBN (out-of-market only)'], 'series_status': 'SD leads 1-0', 'summary': '2023-05-27 - San Diego Padres (2) @ New York Yankees (1) (Bottom of the 7th)'}}
+[2023-05-27T18:42:31.411+0000] {logging_mixin.py:137} INFO - {0: {'game_id': 718006, 'game_datetime': '2023-05-27T17:05:00Z', 'game_date': '2023-05-27', 'game_type': 'R', 'status': 'In Progress', 'away_name': 'San Diego Padres', 'home_name': 'New York Yankees', 'away_id': 135, 'home_id': 147, 'doubleheader': 'N', 'game_num': 1, 'home_probable_pitcher': 'Luis Severino', 'away_probable_pitcher': 'Michael Wacha', 'home_pitcher_note': '', 'away_pitcher_note': '', 'away_score': 2, 'home_score': 1, 'current_inning': 7, 'inning_state': 'Bottom', 'venue_id': 3313, 'venue_name': 'Yankee Stadium', 'national_broadcasts': ['MLBN (out-of-market only)'], 'series_status': 'SD leads 1-0', 'summary': '2023-05-27 - San Diego Padres (2) @ New York Yankees (1) (Bottom of the 7th)', 'game_time': '1:05 PM'}}
+[2023-05-27T18:42:31.429+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-05-27T18:42:31.440+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=game_alert, task_id=call_games, execution_date=20230527T184228, start_date=20230527T184230, end_date=20230527T184231
+[2023-05-27T18:42:31.470+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-27T18:42:31.510+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check

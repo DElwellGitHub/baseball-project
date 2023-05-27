@@ -6,13 +6,15 @@ def _check_game_today(ti):
     print(today_date)
     games = ti.xcom_pull(key=f'games')
     game_date = next(iter(games.values()))['game_date']
+    game_today = 'game_today'
+    print_end = 'end_dag'
     try:
         if today_date==game_date:
             print('There is a game today.')
-            return 'print_game_today'
+            return game_today
         else:
             print('No game today.')
-            return 'print_end'
+            return end_dag
     except:
             print('No game today.')
-            return 'print_end'
+            return end_dag

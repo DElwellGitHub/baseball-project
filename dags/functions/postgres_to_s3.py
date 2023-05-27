@@ -6,7 +6,7 @@ from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 from tempfile import NamedTemporaryFile
 import logging
 
-def postgres_to_s3(ds):
+def _postgres_to_s3(ds):
     #https://www.youtube.com/watch?v=rcG4WNwi900
     #first query data from psql and save in text file
     hook = PostgresHook(postgres_conn_id="postgres_localhost")

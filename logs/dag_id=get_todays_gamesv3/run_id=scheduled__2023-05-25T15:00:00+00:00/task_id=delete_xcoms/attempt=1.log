@@ -1,0 +1,23 @@
+[2023-05-26T15:00:22.323+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: get_todays_gamesv3.delete_xcoms scheduled__2023-05-25T15:00:00+00:00 [queued]>
+[2023-05-26T15:00:22.336+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: get_todays_gamesv3.delete_xcoms scheduled__2023-05-25T15:00:00+00:00 [queued]>
+[2023-05-26T15:00:22.336+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-26T15:00:22.336+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-26T15:00:22.336+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-26T15:00:22.358+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): delete_xcoms> on 2023-05-25 15:00:00+00:00
+[2023-05-26T15:00:22.364+0000] {standard_task_runner.py:55} INFO - Started process 155 to run task
+[2023-05-26T15:00:22.371+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'get_todays_gamesv3', 'delete_xcoms', 'scheduled__2023-05-25T15:00:00+00:00', '--job-id', '742', '--raw', '--subdir', 'DAGS_FOLDER/todays_gamesv3.py', '--cfg-path', '/tmp/tmpvshvzf_w']
+[2023-05-26T15:00:22.372+0000] {standard_task_runner.py:83} INFO - Job 742: Subtask delete_xcoms
+[2023-05-26T15:00:22.451+0000] {task_command.py:388} INFO - Running <TaskInstance: get_todays_gamesv3.delete_xcoms scheduled__2023-05-25T15:00:00+00:00 [running]> on host b03c83f459ca
+[2023-05-26T15:00:22.564+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=get_todays_gamesv3
+AIRFLOW_CTX_TASK_ID=delete_xcoms
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-25T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-05-25T15:00:00+00:00
+[2023-05-26T15:00:22.575+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-05-26T15:00:22.588+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=get_todays_gamesv3, task_id=delete_xcoms, execution_date=20230525T150000, start_date=20230526T150022, end_date=20230526T150022
+[2023-05-26T15:00:22.620+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-26T15:00:22.660+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

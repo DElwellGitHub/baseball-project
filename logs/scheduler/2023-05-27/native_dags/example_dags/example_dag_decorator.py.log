@@ -3229,3 +3229,75 @@
 [2023-05-27T19:05:36.248+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:05:36.248+0000] {dag.py:2693} INFO - Sync 1 DAGs
 [2023-05-27T19:05:36.278+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:05:36.278+0000] {dag.py:3444} INFO - Setting next_dagrun for example_dag_decorator to None, run_after=None
 [2023-05-27T19:05:36.311+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py took 0.194 seconds
+[2023-05-27T19:06:06.661+0000] {processor.py:153} INFO - Started process (PID=17156) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:06:06.662+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py for tasks to queue
+[2023-05-27T19:06:06.663+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:06:06.663+0000] {dagbag.py:532} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:06:06.685+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:06:06.685+0000] {taskmixin.py:211} WARNING - Dependency <Task(_PythonDecoratedOperator): prepare_email>, send_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:06:06.686+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:06:06.686+0000] {taskmixin.py:211} WARNING - Dependency <Task(EmailOperator): send_email>, prepare_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:06:06.701+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_dag_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:06:06.817+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:06:06.816+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T19:06:07.030+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:06:07.030+0000] {dag.py:3444} INFO - Setting next_dagrun for example_dag_decorator to None, run_after=None
+[2023-05-27T19:06:07.052+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py took 0.395 seconds
+[2023-05-27T19:06:37.164+0000] {processor.py:153} INFO - Started process (PID=17207) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:06:37.165+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py for tasks to queue
+[2023-05-27T19:06:37.166+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:06:37.166+0000] {dagbag.py:532} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:06:37.189+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:06:37.189+0000] {taskmixin.py:211} WARNING - Dependency <Task(_PythonDecoratedOperator): prepare_email>, send_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:06:37.190+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:06:37.190+0000] {taskmixin.py:211} WARNING - Dependency <Task(EmailOperator): send_email>, prepare_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:06:37.205+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_dag_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:06:37.459+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:06:37.459+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T19:06:37.488+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:06:37.488+0000] {dag.py:3444} INFO - Setting next_dagrun for example_dag_decorator to None, run_after=None
+[2023-05-27T19:06:37.510+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py took 0.350 seconds
+[2023-05-27T19:07:08.348+0000] {processor.py:153} INFO - Started process (PID=17259) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:07:08.349+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py for tasks to queue
+[2023-05-27T19:07:08.350+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:07:08.350+0000] {dagbag.py:532} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:07:08.374+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:07:08.374+0000] {taskmixin.py:211} WARNING - Dependency <Task(_PythonDecoratedOperator): prepare_email>, send_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:07:08.375+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:07:08.375+0000] {taskmixin.py:211} WARNING - Dependency <Task(EmailOperator): send_email>, prepare_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:07:08.393+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_dag_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:07:08.488+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:07:08.488+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T19:07:08.518+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:07:08.518+0000] {dag.py:3444} INFO - Setting next_dagrun for example_dag_decorator to None, run_after=None
+[2023-05-27T19:07:08.541+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py took 0.197 seconds
+[2023-05-27T19:07:38.873+0000] {processor.py:153} INFO - Started process (PID=17310) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:07:38.874+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py for tasks to queue
+[2023-05-27T19:07:38.875+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:07:38.875+0000] {dagbag.py:532} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:07:38.898+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:07:38.898+0000] {taskmixin.py:211} WARNING - Dependency <Task(_PythonDecoratedOperator): prepare_email>, send_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:07:38.898+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:07:38.898+0000] {taskmixin.py:211} WARNING - Dependency <Task(EmailOperator): send_email>, prepare_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:07:38.916+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_dag_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:07:39.006+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:07:39.006+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T19:07:39.039+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:07:39.038+0000] {dag.py:3444} INFO - Setting next_dagrun for example_dag_decorator to None, run_after=None
+[2023-05-27T19:07:39.215+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py took 0.347 seconds
+[2023-05-27T19:08:10.130+0000] {processor.py:153} INFO - Started process (PID=17361) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:08:10.131+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py for tasks to queue
+[2023-05-27T19:08:10.132+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:08:10.132+0000] {dagbag.py:532} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:08:10.154+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:08:10.153+0000] {taskmixin.py:211} WARNING - Dependency <Task(_PythonDecoratedOperator): prepare_email>, send_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:08:10.154+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:08:10.154+0000] {taskmixin.py:211} WARNING - Dependency <Task(EmailOperator): send_email>, prepare_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:08:10.169+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_dag_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:08:10.256+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:08:10.255+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T19:08:10.436+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:08:10.436+0000] {dag.py:3444} INFO - Setting next_dagrun for example_dag_decorator to None, run_after=None
+[2023-05-27T19:08:10.457+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py took 0.331 seconds
+[2023-05-27T19:08:40.720+0000] {processor.py:153} INFO - Started process (PID=17412) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:08:40.721+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py for tasks to queue
+[2023-05-27T19:08:40.722+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:08:40.722+0000] {dagbag.py:532} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:08:40.744+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:08:40.744+0000] {taskmixin.py:211} WARNING - Dependency <Task(_PythonDecoratedOperator): prepare_email>, send_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:08:40.744+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:08:40.744+0000] {taskmixin.py:211} WARNING - Dependency <Task(EmailOperator): send_email>, prepare_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:08:40.759+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_dag_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:08:40.847+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:08:40.847+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T19:08:40.877+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:08:40.877+0000] {dag.py:3444} INFO - Setting next_dagrun for example_dag_decorator to None, run_after=None
+[2023-05-27T19:08:40.900+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py took 0.184 seconds
+[2023-05-27T19:09:10.947+0000] {processor.py:153} INFO - Started process (PID=17464) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:09:10.952+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py for tasks to queue
+[2023-05-27T19:09:10.953+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:09:10.952+0000] {dagbag.py:532} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:09:10.982+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:09:10.981+0000] {taskmixin.py:211} WARNING - Dependency <Task(_PythonDecoratedOperator): prepare_email>, send_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:09:10.982+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:09:10.982+0000] {taskmixin.py:211} WARNING - Dependency <Task(EmailOperator): send_email>, prepare_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:09:10.997+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_dag_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:09:11.086+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:09:11.085+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T19:09:11.118+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:09:11.118+0000] {dag.py:3444} INFO - Setting next_dagrun for example_dag_decorator to None, run_after=None
+[2023-05-27T19:09:11.142+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py took 0.200 seconds
+[2023-05-27T19:09:41.193+0000] {processor.py:153} INFO - Started process (PID=17515) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:09:41.194+0000] {processor.py:743} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py for tasks to queue
+[2023-05-27T19:09:41.195+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:09:41.195+0000] {dagbag.py:532} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:09:41.217+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:09:41.216+0000] {taskmixin.py:211} WARNING - Dependency <Task(_PythonDecoratedOperator): prepare_email>, send_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:09:41.217+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:09:41.217+0000] {taskmixin.py:211} WARNING - Dependency <Task(EmailOperator): send_email>, prepare_email already registered for DAG: example_dag_decorator
+[2023-05-27T19:09:41.232+0000] {processor.py:753} INFO - DAG(s) dict_keys(['example_dag_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py
+[2023-05-27T19:09:41.319+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:09:41.318+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T19:09:41.506+0000] {logging_mixin.py:137} INFO - [2023-05-27T19:09:41.506+0000] {dag.py:3444} INFO - Setting next_dagrun for example_dag_decorator to None, run_after=None
+[2023-05-27T19:09:41.528+0000] {processor.py:175} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_dag_decorator.py took 0.338 seconds

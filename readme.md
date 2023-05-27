@@ -9,3 +9,20 @@ To get the data needed, I use an API for Major League Baseball stats, and I webs
 
 ![image](https://github.com/DElwell90/baseball-project/assets/26678347/42d2d335-4dc1-415f-9307-637fd22dd62e)
 
+### Data pipeline
+Include image of data pipeline and explanation
+
+### MLB API
+Include reference to statsapi API wrapper and the stats we get
+
+### FiveThirtyEight webscraping
+Talk about FiveThirtyEight odds and how we scrape it
+Include screenshot of website
+
+### Setup
+How I set up airflow using docker
+How I set up EC2 to only run for about 20 min a day using lambda start and stop functions
+
+### Conclusion
+What I learned
+How this can be applied for other things.

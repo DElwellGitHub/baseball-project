@@ -229,3 +229,10 @@ ImportError: cannot import name '_call_games' from 'functions' (unknown location
 [2023-05-27T18:57:01.492+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:57:01.491+0000] {dag.py:2693} INFO - Sync 1 DAGs
 [2023-05-27T18:57:01.526+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:57:01.525+0000] {dag.py:3444} INFO - Setting next_dagrun for game_alert to 2023-05-27T15:00:00+00:00, run_after=2023-05-28T15:00:00+00:00
 [2023-05-27T18:57:01.545+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/game_alert.py took 0.516 seconds
+[2023-05-27T18:57:31.793+0000] {processor.py:153} INFO - Started process (PID=16300) to work on /opt/airflow/dags/game_alert.py
+[2023-05-27T18:57:31.794+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/game_alert.py for tasks to queue
+[2023-05-27T18:57:31.795+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:57:31.795+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:57:32.243+0000] {processor.py:753} INFO - DAG(s) dict_keys(['game_alert']) retrieved from /opt/airflow/dags/game_alert.py
+[2023-05-27T18:57:32.271+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:57:32.271+0000] {dag.py:2693} INFO - Sync 1 DAGs
+[2023-05-27T18:57:32.304+0000] {logging_mixin.py:137} INFO - [2023-05-27T18:57:32.304+0000] {dag.py:3444} INFO - Setting next_dagrun for game_alert to 2023-05-27T15:00:00+00:00, run_after=2023-05-28T15:00:00+00:00
+[2023-05-27T18:57:32.323+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/game_alert.py took 0.534 seconds

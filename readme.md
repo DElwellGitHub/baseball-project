@@ -16,13 +16,13 @@ Include image of data pipeline and explanation
 Include reference to statsapi API wrapper and the stats we get
 
 ### FiveThirtyEight webscraping
-Talk about FiveThirtyEight odds and how we scrape it
+Talk about FiveThirtyEight odds and how we scrape it <br>
 Include screenshot of website
 
 ### Setup
-How I set up airflow using docker
+How I set up airflow using docker <br>
 How I set up EC2 to only run for about 20 min a day using lambda start and stop functions
 
 ### Conclusion
-What I learned
+What I learned <br>
 How this can be applied for other things.

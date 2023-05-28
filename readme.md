@@ -25,7 +25,7 @@ To get the data needed, I use an API for Major League Baseball stats, and I webs
 
 
 ### FiveThirtyEight webscraping
-<p> FiveThirtyEight is known primarily for its data-based journalism and political polling aggregation, however it is also a great resource for seeing predictions on games in all major sports, including Major League Baseball. On gamedays, FiveThirtyEight will post chance of winning odds, as shown in the image below:
+<p> FiveThirtyEight is known primarily for its data-based journalism and political polling aggregation, however it is also a great resource for seeing predictions on games in all major sports, including Major League Baseball. On gamedays, FiveThirtyEight will post chance of winning odds, as shown in the image below:</p>
 ![FiveThirtyEight](https://github.com/DElwell90/baseball-project/assets/26678347/c482cd7a-f425-4160-b85d-38bdcfecc094)
 
 

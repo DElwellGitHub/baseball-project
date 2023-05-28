@@ -1,0 +1,37 @@
+[2023-05-28T16:05:24.183+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: game_alert.exec_insert_query_task scheduled__2023-05-27T15:00:00+00:00 [queued]>
+[2023-05-28T16:05:24.194+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: game_alert.exec_insert_query_task scheduled__2023-05-27T15:00:00+00:00 [queued]>
+[2023-05-28T16:05:24.195+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-28T16:05:24.195+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-05-28T16:05:24.195+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-28T16:05:24.212+0000] {taskinstance.py:1303} INFO - Executing <Task(PostgresOperator): exec_insert_query_task> on 2023-05-27 15:00:00+00:00
+[2023-05-28T16:05:24.219+0000] {standard_task_runner.py:55} INFO - Started process 72 to run task
+[2023-05-28T16:05:24.223+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'game_alert', 'exec_insert_query_task', 'scheduled__2023-05-27T15:00:00+00:00', '--job-id', '801', '--raw', '--subdir', 'DAGS_FOLDER/game_alert.py', '--cfg-path', '/tmp/tmptj4oa8oy']
+[2023-05-28T16:05:24.223+0000] {standard_task_runner.py:83} INFO - Job 801: Subtask exec_insert_query_task
+[2023-05-28T16:05:24.297+0000] {task_command.py:388} INFO - Running <TaskInstance: game_alert.exec_insert_query_task scheduled__2023-05-27T15:00:00+00:00 [running]> on host b03c83f459ca
+[2023-05-28T16:05:24.418+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=game_alert
+AIRFLOW_CTX_TASK_ID=exec_insert_query_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-27T15:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-05-27T15:00:00+00:00
+[2023-05-28T16:05:24.421+0000] {sql.py:254} INFO - Executing: 
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name,game_date,
+                                                              home_wins, home_losses, home_gb, away_wins, away_losses, away_gb, team_win_prob, game_time)
+                                   VALUES ('San Diego Padres','New York Yankees','Yu Darvish',
+                                   'Gerrit Cole','Yankee Stadium','2023-05-28',
+                                   '31','23','7.0','24','28','7.5','56%','1:35 PM');
+[2023-05-28T16:05:24.430+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-05-28T16:05:24.724+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-05-28T16:05:24.732+0000] {sql.py:375} INFO - Running statement: 
+INSERT INTO games (away_name,home_name,away_probable_pitcher,home_probable_pitcher,venue_name,game_date,
+                                                              home_wins, home_losses, home_gb, away_wins, away_losses, away_gb, team_win_prob, game_time)
+                                   VALUES ('San Diego Padres','New York Yankees','Yu Darvish',
+                                   'Gerrit Cole','Yankee Stadium','2023-05-28',
+                                   '31','23','7.0','24','28','7.5','56%','1:35 PM');, parameters: None
+[2023-05-28T16:05:24.732+0000] {sql.py:384} INFO - Rows affected: 1
+[2023-05-28T16:05:24.752+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=game_alert, task_id=exec_insert_query_task, execution_date=20230527T150000, start_date=20230528T160524, end_date=20230528T160524
+[2023-05-28T16:05:24.799+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-05-28T16:05:24.851+0000] {taskinstance.py:2585} INFO - 2 downstream tasks scheduled from follow-on schedule check

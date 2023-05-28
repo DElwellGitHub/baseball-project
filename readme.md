@@ -10,16 +10,30 @@ To get the data needed, I use an API for Major League Baseball stats, and I webs
 ![image](https://github.com/DElwell90/baseball-project/assets/26678347/42d2d335-4dc1-415f-9307-637fd22dd62e)
 
 ### Data pipeline
-Include image of data pipeline and explanation
 ![Flowcharts (1)](https://github.com/DElwell90/baseball-project/assets/26678347/994d5f54-49cf-42d3-8510-27c503729620)
 
 
 ### MLB API
-Include reference to statsapi API wrapper and the stats we get
+<p>In order to efficiently call MLB stats data, I leveraged a popular [Python wrapper for MLB's API](https://pypi.org/project/MLB-StatsAPI/), created by Todd Roberts. The Python wrapper allows me to directly call MLB's API for important data needed for my alert: </p>
+- Wins
+- Losses
+- Games back of first place
+- Who the Yankees are playing
+- Which ballpark they are playing in
+- Starting pitchers
+- Game time
+
 
 ### FiveThirtyEight webscraping
+<p> FiveThirtyEight is known primarily for its data-based journalism and political polling aggregation, however it is also a great resource for seeing predictions on games in all major sports, including Major League Baseball. On gamedays, FiveThirtyEight will post chance of winning odds, as shown in the image below:
+
+
 Talk about FiveThirtyEight odds and how we scrape it <br>
 Include screenshot of website
+
+
+### Airflow Dag
+Include dag graph
 
 ### Setup
 How I set up airflow using docker <br>

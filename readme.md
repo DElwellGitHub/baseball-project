@@ -53,8 +53,29 @@ Using two popular Python libraries, I scrape FiveThirtyEight's website in order 
 
 
 ### Setup
-How I set up airflow using docker <br>
-How I set up EC2 to only run for about 20 min a day using lambda start and stop functions
+In order for my project to work, I needed to set up the infrastructure, which included the following:
+- EC2
+    - Set up a t2.large instance on Ubuntu distribution of Linux.
+    - Attached a 20 GiB volume.
+
+- Airflow
+    - Set up on EC2 using docker compose.
+        - "Data with Marc" has [this great tutorial](https://www.youtube.com/watch?v=aTaytcxy2Ck) on how to do this.
+    - Created connections to our docker container postgres database and to AWS, so that we can send data to S3.
+
+- S3 bucket
+    - Created an S3 bucket that would hold a CSV of our data and trigger a lambda function whenever it is updated.
+
+- Lambda function to compose and trigger message
+    - Set up a lambda function that would be triggered whenever the source S3 bucket is updated.
+    - Lambda function would trigger a message sent to SNS topic.
+
+- SNS
+    - Created a topic and subscribed my personal email, so that whenever the topic is triggered by Lambda, I would receive an email.
+
+- Lambda function to start and stop EC2 instance (optional)
+    - Created two lambda functions that would automatically stop and start my EC2 instance at times of day I define in AWS EventBridge.
+    - By doing this, I save money on EC2 costs, as I only need to run it for about 20 minutes per day, rather than 24 hours per day.
 
 ### Conclusion
 What I learned <br>

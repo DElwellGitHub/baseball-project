@@ -33,17 +33,17 @@ Using two popular Python libraries, I scrape FiveThirtyEight's website in order 
 
 ### Airflow Dag
 <p> As an open-source orchestration tool, Airflow serves as a great way to schedule and execute all tasks needed in order to pull my data and organize it for my message. It's workflow can be summarized by the following steps: </p>
-1- Start directed acyclic graph (dag).
-2- Call MLB's API to get today's games data (i.e. who is playing today).
-3- Check if there is a Yankee game today. If not, end dag. If there is, then proceed to next step.
-4- Call MLB's standings data to get teams' wins, losses and games back.
-5- Scrape FiveThirtyEight's website to get Yankees' probability of winning.
-6- Create a Postgres SQL table that will organize all of our data.
-7- Write a SQL insert query for our data.
-8- Execute the insert query.
-9- Send the Postgres table data to a csv and place in an S3 bucket.
-10- Delete Xcoms data (Xcoms is local storage used for our Airflow dag).
-11- End dag.
+1. Start directed acyclic graph (dag).
+2. Call MLB's API to get today's games data (i.e. who is playing today).
+3. Check if there is a Yankee game today. If not, end dag. If there is, then proceed to next step.
+4. Call MLB's standings data to get teams' wins, losses and games back.
+5. Scrape FiveThirtyEight's website to get Yankees' probability of winning.
+6. Create a Postgres SQL table that will organize all of our data.
+7. Write a SQL insert query for our data.
+8. Execute the insert query.
+9. Send the Postgres table data to a csv and place in an S3 bucket.
+10. Delete Xcoms data (Xcoms is local storage used for our Airflow dag).
+11. End dag.
 
 <p>Here is the screenshot of my dag: </p>
 

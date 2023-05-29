@@ -35,7 +35,7 @@ Using two popular Python libraries, I scrape FiveThirtyEight's website in order 
 <p> As an open-source orchestration tool, Airflow serves as a great way to schedule and execute all tasks needed in order to pull my data and organize it for my message. It's workflow can be summarized by the following steps: </p>
 
 1. Start directed acyclic graph (dag).
-2. 2. Call MLB's API to get today's games data (i.e. who is playing today).
+2. Call MLB's API to get today's games data (i.e. who is playing today).
 
 3. Check if there is a Yankee game today. If not, end dag. If there is, then proceed to next step.
 

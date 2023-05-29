@@ -53,8 +53,6 @@ Using two popular Python libraries, I scrape FiveThirtyEight's website in order 
 
 ![dag](https://github.com/DElwell90/baseball-project/assets/26678347/d62a4a6d-c270-43b9-95ef-c00cd9bab423)
 
-
-
 ### Setup
 In order for my project to work, I needed to set up the infrastructure, which included the following:
 - EC2

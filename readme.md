@@ -79,5 +79,6 @@ In order for my project to work, I needed to set up the infrastructure, which in
     - By doing this, I save money on EC2 costs, as I only need to run it for about 20 minutes per day, rather than 24 hours per day.
 
 ### Conclusion
-What I learned <br>
-How this can be applied for other things.
+<p>While this is not my first project that involves Airflow, Lambda and EC2, this project did give me good opportunity to deepen my knowledge of those tools using a fun topic like baseball. I became much more comfortable with setting up Airflow from scratch, and with using BeautifulSoup to scrape websites. Also, I learned how to increase my EC2 cost savings by setting up automatic start and stop lambda functions.</p>
+
+<p>Given the trivial cost of keeping these alerts running, I plan to keep this automated alert running throughout the season, so that I can stay up-to-date with Yankee games this year.</p>

@@ -50,6 +50,8 @@ Using two popular Python libraries, I scrape FiveThirtyEight's website in order 
 11. End dag.
 
 <p>Here is the screenshot of my dag: </p>
+![dag](https://github.com/DElwell90/baseball-project/assets/26678347/d62a4a6d-c270-43b9-95ef-c00cd9bab423)
+
 
 
 ### Setup

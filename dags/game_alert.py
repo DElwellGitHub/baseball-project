@@ -6,7 +6,7 @@ from airflow.operators.python import PythonOperator
 from airflow.operators.python import BranchPythonOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.operators.dummy_operator import DummyOperator
-from statsapi import *
+from functions.statsapi import *
 from functions import check_game_today, call_games, call_standings, scrape_prob, write_insert_query, postgres_to_s3, delete_xcoms
 
 

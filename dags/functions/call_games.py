@@ -1,5 +1,5 @@
 import datetime as dt
-from statsapi import *
+from functions.statsapi import *
 
 class datetimeChange:
     '''

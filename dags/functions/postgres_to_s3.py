@@ -7,6 +7,9 @@ from tempfile import NamedTemporaryFile
 import logging
 
 def _postgres_to_s3(ds):
+    '''
+    Send data from Postgres to S3 bucket.
+    '''
     #https://www.youtube.com/watch?v=rcG4WNwi900
     #first query data from psql and save in text file
     hook = PostgresHook(postgres_conn_id="postgres_localhost")

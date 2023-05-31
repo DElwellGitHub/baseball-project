@@ -4,6 +4,9 @@ from airflow.providers.amazon.aws.transfers.sql_to_s3 import SqlToS3Operator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 
 def _write_insert_query(ti,ds):
+    '''
+    Write the query that will insert data into Postgres database.
+    '''
     games = ti.xcom_pull(key=f'games')
     win_prob = ti.xcom_pull(key='win_prob')
     sql_query = ''

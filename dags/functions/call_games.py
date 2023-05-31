@@ -3,7 +3,7 @@ from functions.statsapi import *
 
 class datetimeChange:
     '''
-    Change time from datetime in UTC to just time in Eastern time zone.
+    Change time from datetime in UTC to  Eastern time zone.
     '''
     def __init__(self, orig_datetime):
         self.orig_datetime = orig_datetime
@@ -16,6 +16,9 @@ class datetimeChange:
 
 def _call_games(ti,
                 team):
+    '''
+    Call the MLB API to get games data.
+    '''
     date_call = dt.datetime.now().strftime('%m/%d/%Y')
     print(date_call)
     games = schedule(start_date=date_call,end_date=date_call,team=team)

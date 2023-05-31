@@ -4,7 +4,9 @@ import csv
 import datetime as dt
 
 def get_subject_content(s3_client,record):
-    #get subject content
+    '''
+    Get the content needed for subject.
+    '''
     try:
         s3_bucket = record['s3']['bucket']['name']
         object_key = record['s3']['object']['key']
@@ -20,7 +22,9 @@ def get_subject_content(s3_client,record):
         return True
 
 def get_message_content(s3_client,record):
-    #get message content
+    '''
+    Get the content needed for message.
+    '''
     try:
         s3_bucket = record['s3']['bucket']['name']
         object_key = record['s3']['object']['key']
@@ -52,6 +56,9 @@ Yankees have a {team_win_prob} chance of winning, according to FiveThirtyEight.
         return True
 
 def send_sns(message, subject, topic_arn):
+    '''
+    Trigger SNS to send email to topic subscribers.
+    '''
     try:
         client = boto3.client("sns")
         result = client.publish(TopicArn=topic_arn, Message=message, Subject=subject)
@@ -64,9 +71,11 @@ def send_sns(message, subject, topic_arn):
         return True
 
 def lambda_handler(event, context):
+    '''
+    Run lambda handler and functions above.
+    '''
     s3_client = boto3.client('s3')
     record = event['Records'][0]
-    print(record)
     message = get_message_content(s3_client,record)
     today_date = dt.datetime.now().strftime('%b %d, %Y')
     subject = get_subject_content(s3_client,record)

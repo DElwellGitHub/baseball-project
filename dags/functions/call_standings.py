@@ -2,6 +2,9 @@ from airflow.models import XCom
 from functions.statsapi import standings_data
 
 def _call_standings(ti):
+    '''
+    Call the MLB API for standings data.
+    '''
     games = ti.xcom_pull(key=f'games')
     print(games)
     for v in games.values():

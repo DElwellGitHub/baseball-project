@@ -2,6 +2,9 @@ from airflow.models import XCom
 import datetime as dt
 
 def _check_game_today(ti):
+    '''
+    Check to see if there is or is not a game scheduled today.
+    '''
     today_date = dt.datetime.now().strftime('%Y-%m-%d')
     print(today_date)
     games = ti.xcom_pull(key=f'games')

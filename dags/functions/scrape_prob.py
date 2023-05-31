@@ -6,7 +6,7 @@ import requests
 
 class scrapeProb:
     '''
-    Scrape probability that MLB team will win their game.
+    Scrape FiveThirtyEight and get probability that MLB team will win their game.
     '''
 
     def __init__(self, short_team_name, year):

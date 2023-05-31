@@ -3,6 +3,9 @@ from airflow.models import XCom
 
 @provide_session
 def _delete_xcoms(session=None):
+    '''
+    Delete all Xcoms data.
+    '''
     num_rows_deleted = 0
 
     try:

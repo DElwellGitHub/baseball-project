@@ -9,7 +9,7 @@ To get the data needed, I use an API for Major League Baseball stats, and I webs
 
 ![image](https://github.com/DElwell90/baseball-project/assets/26678347/42d2d335-4dc1-415f-9307-637fd22dd62e)
 
-![screenshot phone text message](https://github.com/DElwell90/baseball-project/assets/26678347/ad7d1ec0-d31c-42e3-88b1-9c4efd9d6e01)
+![screenshot phone text message](https://github.com/DElwell90/baseball-project/assets/26678347/3d65f9ef-2b46-455b-b8f6-7d6edf08124a)
 
 ### Data pipeline
 ![Flowcharts (1)](https://github.com/DElwell90/baseball-project/assets/26678347/994d5f54-49cf-42d3-8510-27c503729620)

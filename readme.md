@@ -2,12 +2,14 @@
 ### A project that uses Airflow and AWS (EC2, Lambda and SNS) to send an automated alert about today's Yankee game
 
 <p>As a developer and New York Yankees fan, I wanted to practice my data engineering skills by setting up a daily alert that would give me info about today's upcoming Yankee game.
-This project uses Apache Airflow, an open-source orchestration tool developed by Airbnb, along with several Amazon Web Services (EC2, Lambda and SNS) to send a daily alert. 
+This project uses Apache Airflow, an open-source orchestration tool developed by Airbnb, along with several Amazon Web Services (EC2, Lambda and SNS) to send a daily alert via email and text. 
 
-To get the data needed, I use an API for Major League Baseball stats, and I webscrape [FiveThirtyEight's MLB games predictions page](https://projects.fivethirtyeight.com/2023-mlb-predictions/games/) in order to show the odds of the Yankees winning. The resulting message looks similar to this:
+To get the data needed, I use an API for Major League Baseball stats, and I webscrape [FiveThirtyEight's MLB games predictions page](https://projects.fivethirtyeight.com/2023-mlb-predictions/games/) in order to show the odds of the Yankees winning. The resulting email and text messages look like this:
 </p>
 
 ![image](https://github.com/DElwell90/baseball-project/assets/26678347/42d2d335-4dc1-415f-9307-637fd22dd62e)
+
+![screenshot phone text message](https://github.com/DElwell90/baseball-project/assets/26678347/ad7d1ec0-d31c-42e3-88b1-9c4efd9d6e01)
 
 ### Data pipeline
 ![Flowcharts (1)](https://github.com/DElwell90/baseball-project/assets/26678347/994d5f54-49cf-42d3-8510-27c503729620)
@@ -29,7 +31,7 @@ To get the data needed, I use an API for Major League Baseball stats, and I webs
 
 ![FiveThirtyEight](https://github.com/DElwell90/baseball-project/assets/26678347/5d10046f-1a3d-44c4-b858-bebd565b55fe)
 
-Using two popular Python libraries, I scrape FiveThirtyEight's website in order to automatically pull the Yankees' odds of winning on today's date, which later is brought into my email essage.
+Using two popular Python libraries, I scrape FiveThirtyEight's website in order to automatically pull the Yankees' odds of winning on today's date, which later is brought into my email/text message.
 
 ### Airflow Dag
 <p> As an open-source orchestration tool, Airflow serves as a great way to schedule and execute all tasks needed in order to pull my data and organize it for my message. It's workflow can be summarized by the following steps: </p>
@@ -72,7 +74,7 @@ In order for my project to work, I needed to set up the infrastructure, which in
     - Lambda function would trigger a message sent to SNS topic.
 
 - SNS
-    - Created a topic and subscribed my personal email, so that whenever the topic is triggered by Lambda, I would receive an email.
+    - Created a topic and subscribed my personal email address and phone number, so that whenever the topic is triggered by Lambda, I would receive an email and text.
 
 - Lambda function to start and stop EC2 instance (optional)
     - Created two lambda functions that would automatically stop and start my EC2 instance at times of day I define in AWS EventBridge.

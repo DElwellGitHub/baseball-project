@@ -50,7 +50,8 @@ with DAG(dag_id="game_alert",
     scrape_win_prob = PythonOperator(
         task_id = 'scrape_prob_task',
         python_callable = scrape_prob._scrape_prob,
-        op_kwargs = {'short_team_name':'NYY'}, #Yankees short name
+        op_kwargs = {'short_team_name':'NYY',
+                     'long_team_name':'Yankees'}, 
         dag=dag
     )
     

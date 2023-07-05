@@ -1,40 +1,37 @@
 import datetime as dt
 from bs4 import BeautifulSoup
 import requests
-#from functions.functions import scrapeProb
-
-
 class scrapeProb:
     '''
     Scrape FiveThirtyEight and get probability that MLB team will win their game.
     '''
 
-    def __init__(self, short_team_name, year):
+    def __init__(self, short_team_name, long_team_name, datetime_now):
         self.short_team_name = short_team_name
-        self.year = year
+        self.long_team_name = long_team_name
+        self.year = datetime_now.year
+        self.month = datetime_now.month
+        self.day = datetime_now.day
 
     def scrape_prob(self):
-        url = f'https://projects.fivethirtyeight.com/{self.year}-mlb-predictions/games/'
+        lower_long_team_name = self.long_team_name.lower()
+        url = f'https://projects.fivethirtyeight.com/{self.year}-mlb-predictions/{lower_long_team_name}/'
         page = requests.get(url)
+        soup = BeautifulSoup(page.content, 'html.parser')
 
-        soup = BeautifulSoup(page.content, 'html.parser')   
-        results_team = soup.find_all('span',class_='team-name short')
-        results_win_prob = soup.find('main',class_='container').find('table',class_='table').find_all('td', class_="td number td-number win-prob")
+        #Find the day of today's game
+        day_location = soup.find('main',class_='container').find('table',class_='table').find('span',class_='day short',string=f'{self.month}/{self.day}')
 
-        team_i=0
-        for team in results_team:
-            if team.get_text()== self.short_team_name:
-                team_pct_i=team_i
-                break
-            team_i+=1
-
-        prob_win = results_win_prob[team_pct_i].get_text()
+        #Use that day to locate today's win probability
+        prob_win = day_location.findParent().findParent().find('td',class_="td number td-number win-prob").get_text()
 
         return prob_win
 
 
 
-def _scrape_prob(ti,short_team_name):
-    win_prob = scrapeProb(short_team_name, dt.datetime.now().year).scrape_prob()
+def _scrape_prob(ti, short_team_name, long_team_name):
+    win_prob = scrapeProb(short_team_name, 
+                          long_team_name, 
+                          dt.datetime.now()).scrape_prob()
     print(f'Win Prob {win_prob}')
     ti.xcom_push(key='win_prob',value=win_prob)

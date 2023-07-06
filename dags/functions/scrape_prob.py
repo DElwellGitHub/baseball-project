@@ -23,7 +23,7 @@ class scrapeProb:
         day_location = soup.find('main',class_='container').find('table',class_='table').find('span',class_='day short',string=f'{self.month}/{self.day}')
 
         #Use that day to locate today's win probability
-        prob_win = day_location.findParent().findParent().find('td',class_="td number td-number win-prob").get_text()
+        prob_win = day_location.findParent().findParent().find_next_sibling().find('td',class_="td number td-number win-prob").get_text()
 
         return prob_win
 

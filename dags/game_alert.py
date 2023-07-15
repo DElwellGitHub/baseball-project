@@ -92,3 +92,4 @@ with DAG(dag_id="game_alert",
 #Set up dag dependencies
 start_dag >> call_games >> check_game_today >> [game_today, end_dag]
 game_today >> [call_standings, create_sql_table, scrape_win_prob] >> write_insert_query >> exec_insert_query >> [postgres_to_s3, delete_xcoms] >>  end_dag
+

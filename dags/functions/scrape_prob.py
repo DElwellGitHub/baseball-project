@@ -22,12 +22,21 @@ class scrapeProb:
         #Find the day of today's game
         day_location = soup.find('main',class_='container').find('table',class_='table').find('span',class_='day short',string=f'{self.month}/{self.day}')
 
-        #Use that day to locate today's win probability
-        prob_win = day_location.findParent().findParent().find_next_sibling().find('td',class_="td number td-number win-prob").get_text()
+        #Determine home team and away teams
+        away_team = day_location.findParent().findParent().find('span',class_='team-name short').get_text()
+        home_team = day_location.findParent().findParent().find_next_sibling().find('span',class_='team-name short').get_text()
+
+        #If our team is away, this is how we get win prob
+        if self.short_team_name == away_team:
+            prob_win = day_location.findParent().findParent().find('td',class_="td number td-number win-prob").get_text()
+        #If our team is home, this is how we get win prob
+        elif self.short_team_name == home_team:
+            prob_win = day_location.findParent().findParent().find_next_sibling().find('td',class_="td number td-number win-prob").get_text()
+        #Error in case team somehow not found
+        else:
+            prob_win = '<Error>'
 
         return prob_win
-
-
 
 def _scrape_prob(ti, short_team_name, long_team_name):
     win_prob = scrapeProb(short_team_name, 
